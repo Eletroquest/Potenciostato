@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Potenciostato_Firmware: Código-Fonte de include/LMPapp.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="CV_icon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">Potenciostato_Firmware<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Poli – USP e IQ-USP</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">LMPapp.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_l_m_papp_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef LMPAPP_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define LMPAPP_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;LMP91000.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;dac80501.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;freertos/queue.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;ads131a04.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;dac80501.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structconfig__lmp.html">   23</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structconfig__lmp.html">config_lmp</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structconfig__lmp.html#a7c3df3aac0c59961a99f8f1333490248">   24</a></span>    uint8_t <a class="code hl_variable" href="structconfig__lmp.html#a7c3df3aac0c59961a99f8f1333490248">lmpGain</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structconfig__lmp.html#aba30a3084636cc4a55c88f1873388bfd">   25</a></span>    uint8_t <a class="code hl_variable" href="structconfig__lmp.html#aba30a3084636cc4a55c88f1873388bfd">RLoad</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structconfig__lmp.html#ae9f9e9930ccfc3ad5da4ce8a8e4f022f">   26</a></span>    uint8_t <a class="code hl_variable" href="structconfig__lmp.html#ae9f9e9930ccfc3ad5da4ce8a8e4f022f">IntZ</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structconfig__lmp.html#aa6ff2ac68d46071824f1509d09542d89">   27</a></span>    uint8_t <a class="code hl_variable" href="structconfig__lmp.html#aa6ff2ac68d46071824f1509d09542d89">bias_setting</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html">   33</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_c_v__setup.html">CV_setup</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a0e354da9d7f1847d07fb0a91052302a8">   34</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a0e354da9d7f1847d07fb0a91052302a8">lmpGain</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a2de8a3ff91ab6ea9ba1e1f2c9619c9ba">   35</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a2de8a3ff91ab6ea9ba1e1f2c9619c9ba">cycles</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a8bc8b3b348f304c1d98890cc95cb1950">   36</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a8bc8b3b348f304c1d98890cc95cb1950">startV</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a40ccc78add9b16caea49997128aaa066">   37</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a40ccc78add9b16caea49997128aaa066">endV</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a14ce01a54bf2f0a7007d472b3603e001">   38</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a14ce01a54bf2f0a7007d472b3603e001">vertex1</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a525c47f428e560ddfec436d98d81718d">   39</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a525c47f428e560ddfec436d98d81718d">vertex2</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#af6834fb68e9cba79e319a3733db59158">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#af6834fb68e9cba79e319a3733db59158">stepV</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#ac1234eb539dbc858b8380158755c7f70">   41</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#ac1234eb539dbc858b8380158755c7f70">rate</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_c_v__setup.html#a39d52bb89bafd55e168a78d76c7f1038">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_c_v__setup.html#a39d52bb89bafd55e168a78d76c7f1038">setToZero</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_amp__setup.html">   48</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_amp__setup.html">Amp_setup</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#abff55cdb9aefee1b60d6f68424199246">   49</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#abff55cdb9aefee1b60d6f68424199246">lmpGain</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#a516cbd2314700f494845f06f334cad19">   50</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#a516cbd2314700f494845f06f334cad19">pre_stepV</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#afd741788928d4fb438aef69eb1bd7b20">   51</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#afd741788928d4fb438aef69eb1bd7b20">quietTime</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#ae1d604f75be512df8459a5cb96859135">   52</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#ae1d604f75be512df8459a5cb96859135">v1</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#af5faa7b07123c0ca655b3b753f892f7c">   53</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#af5faa7b07123c0ca655b3b753f892f7c">t1</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#a0c34b96ff6975e4e22f35e758cce54c9">   54</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#a0c34b96ff6975e4e22f35e758cce54c9">v2</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#a21eb0a63043e4a667841468def0d1131">   55</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#a21eb0a63043e4a667841468def0d1131">t2</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#adc652fb8aa4d2e74c1dfd77fca51cac8">   56</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#adc652fb8aa4d2e74c1dfd77fca51cac8">samples</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#ac4a9efdaf08062730ac08cc8f42573c9">   57</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#ac4a9efdaf08062730ac08cc8f42573c9">range</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_amp__setup.html#a7d4b192e594496d61862b9ef8ea611dd">   58</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_amp__setup.html#a7d4b192e594496d61862b9ef8ea611dd">setToZero</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="};">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="union_union_metodos.html">   65</a></span><span class="keyword">typedef</span> <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="union_union_metodos.html#ae1e97b7a133327563428d907383cc880">   66</a></span>    <a class="code hl_struct" href="struct_c_v__setup.html">CV_setup</a> <a class="code hl_variable" href="union_union_metodos.html#ae1e97b7a133327563428d907383cc880">cv</a>;       </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="union_union_metodos.html#a21819173c5fb7dc3f96d30117f64f8d1">   67</a></span>    <a class="code hl_struct" href="struct_amp__setup.html">Amp_setup</a> <a class="code hl_variable" href="union_union_metodos.html#a21819173c5fb7dc3f96d30117f64f8d1">amp</a>;     </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <a class="code hl_union" href="union_union_metodos.html">UnionMetodos</a>;</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfd">   73</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfdac4aa97bc355072d9be5bd373787cfa94">   74</a></span>    <a class="code hl_enumvalue" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfdac4aa97bc355072d9be5bd373787cfa94">CV_metodo</a> = 0,    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfda7d126e762c3ae7a0f3b02bc04d46607e">   75</a></span>    <a class="code hl_enumvalue" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfda7d126e762c3ae7a0f3b02bc04d46607e">Amp_metodo</a> = 1,   </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_enumvalue" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfdaaf7a5f24ace465ee59da96ecde5cab55">Generic_type</a> = 9  </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfdaaf7a5f24ace465ee59da96ecde5cab55">   77</a></span>} <a class="code hl_enumeration" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfd">MetodoType</a>;</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_struct_control_metodo.html">   82</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_struct_control_metodo.html#a31acb809d7764ae8a809777a8654df59">   83</a></span>    <a class="code hl_enumeration" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfd">MetodoType</a> <a class="code hl_variable" href="struct_struct_control_metodo.html#a31acb809d7764ae8a809777a8654df59">type</a>;           </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="struct_struct_control_metodo.html#aff8f8ac1b0977b353eee8b1454be7d53">   84</a></span>    <a class="code hl_union" href="union_union_metodos.html">UnionMetodos</a> <a class="code hl_variable" href="struct_struct_control_metodo.html#aff8f8ac1b0977b353eee8b1454be7d53">metodo</a>;       </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>} <a class="code hl_struct" href="struct_struct_control_metodo.html">StructControlMetodo</a>;</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="};">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html">   90</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structdata__print___c_v.html">data_print_CV</a> {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a84f09b3275b3907b900daaf2e3174d5d">   91</a></span>  uint16_t <a class="code hl_variable" href="structdata__print___c_v.html#a84f09b3275b3907b900daaf2e3174d5d">zero</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#ad28e4f4168959947c50547046bac3d61">   92</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="structdata__print___c_v.html#ad28e4f4168959947c50547046bac3d61">bias</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#adc9f603830255974228c792d1cb47ab8">   93</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___c_v.html#adc9f603830255974228c792d1cb47ab8">vout</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a45668e40d5cce5673b5e3c25d4eab422">   94</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___c_v.html#a45668e40d5cce5673b5e3c25d4eab422">c1</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a874dd4fd5a234c25b098f75bf71376fe">   95</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___c_v.html#a874dd4fd5a234c25b098f75bf71376fe">current</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a27fc740d261815e73d35d9a8f6b4073d">   96</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___c_v.html#a27fc740d261815e73d35d9a8f6b4073d">current2</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a144817a90f07db84245abf76522500ea">   97</a></span>  uint8_t <a class="code hl_variable" href="structdata__print___c_v.html#a144817a90f07db84245abf76522500ea">cycle</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a65181dfe199329330ef43ea7487ad475">   98</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___c_v.html#a65181dfe199329330ef43ea7487ad475">voltage_f</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structdata__print___c_v.html#a1ba2bf80a59032af5561df45aa13d119">   99</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___c_v.html#a1ba2bf80a59032af5561df45aa13d119">current_f</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structdata__print___amp.html">  105</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structdata__print___amp.html">data_print_Amp</a> {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structdata__print___amp.html#a761d921552107dd32e8829169cf4889d">  106</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___amp.html#a761d921552107dd32e8829169cf4889d">voltage</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structdata__print___amp.html#ae855c61b5e9773acf9d19e4c9638aec7">  107</a></span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="structdata__print___amp.html#ae855c61b5e9773acf9d19e4c9638aec7">time</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structdata__print___amp.html#a81ca43b85d12b8dfc619443f06a89e24">  108</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structdata__print___amp.html#a81ca43b85d12b8dfc619443f06a89e24">current</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="};">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="union_union_output.html">  114</a></span><span class="keyword">typedef</span> <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="union_union_output.html#a5ccf56666b463ef3dc2704edf4d1f08e">  115</a></span>    <a class="code hl_struct" href="structdata__print___c_v.html">data_print_CV</a> <a class="code hl_variable" href="union_union_output.html#a5ccf56666b463ef3dc2704edf4d1f08e">cv</a>;        </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="union_union_output.html#a09df30a192d35a1e0f9803c498c4b16a">  116</a></span>    <a class="code hl_struct" href="structdata__print___amp.html">data_print_Amp</a> <a class="code hl_variable" href="union_union_output.html#a09df30a192d35a1e0f9803c498c4b16a">amp</a>;      </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="union_union_output.html#a81e1ddd06f3689421e84d73407cfb938">  117</a></span>    <span class="keywordtype">char</span> <span class="keywordtype">string</span>[100];</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>} <a class="code hl_union" href="union_union_output.html">UnionOutput</a>;</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="struct_struct_control_output.html">  123</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="struct_struct_control_output.html#aececbe1c68e1c505089d36390b41193c">  124</a></span>    <a class="code hl_enumeration" href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfd">MetodoType</a> <a class="code hl_variable" href="struct_struct_control_output.html#aececbe1c68e1c505089d36390b41193c">type</a>;           </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="struct_struct_control_output.html#ae302c34f84ece0cad9ebb02f103741fc">  125</a></span>    <a class="code hl_union" href="union_union_output.html">UnionOutput</a> <a class="code hl_variable" href="struct_struct_control_output.html#ae302c34f84ece0cad9ebb02f103741fc">output</a>;        </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <a class="code hl_struct" href="struct_struct_control_output.html">StructControlOutput</a>;</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a42421a0a7ba2fc595e273e5a9a79cffc">setupLMP</a>(uint8_t <a class="code hl_variable" href="group___pin___definitions.html#ga1a7cbb7bf138520c626c17e6c7ffa6b7">MENB</a>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a8847088b3e74412527d7e32272efc25b">initLMPapp</a>(<a class="code hl_struct" href="structconfig__lmp.html">config_lmp</a>, dac_t*);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a342283b10be5fe925777cd6ee82daa6b">initLMP</a>(uint8_t);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keywordtype">boolean</span> <a class="code hl_function" href="_l_m_papp_8h.html#a9ef1edd4559b0e7df7c71d12869402c5">LMP_isReady</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a8726ef450415d60800487b60088d01a5">TaskRunMetodo</a>(<span class="keywordtype">void</span> *pvParameters);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a2536e3d60035cc7936c74786113f8a46">LMP_setVoltage</a>(int16_t voltage);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a32d9922b6eff7e32c69eeb9d00a46bfe">LMP_readVoltage</a>(int16_t voltage);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a2bd51c26b394d17c3d62eb64f915a9cc">setLMPBias</a>(int16_t voltage);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a43eea38dc24e38149871bc4d7989a981">setVoltage</a>(int16_t voltage);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a847c3564f7c67a7f4ace5da91ce6884c">print_data_CV</a>();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a4f67553db7df46130c2386194197151d">setOutputsToZero</a>();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a3eb9780523f60eb88e6f1b772bd04b2a">iniciarMetodo</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#a1c780630713d9e6c1240965140af3131">pararMetodo</a>();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_m_papp_8h.html#ade774a3e18020a5960d53571a2a0840b">reiniciarMetodo</a>();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a1c780630713d9e6c1240965140af3131"><div class="ttname"><a href="_l_m_papp_8h.html#a1c780630713d9e6c1240965140af3131">pararMetodo</a></div><div class="ttdeci">void pararMetodo()</div><div class="ttdoc">Para o método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:465</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a2536e3d60035cc7936c74786113f8a46"><div class="ttname"><a href="_l_m_papp_8h.html#a2536e3d60035cc7936c74786113f8a46">LMP_setVoltage</a></div><div class="ttdeci">void LMP_setVoltage(int16_t voltage)</div><div class="ttdoc">Define a tensão do LMP.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:247</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a2bd51c26b394d17c3d62eb64f915a9cc"><div class="ttname"><a href="_l_m_papp_8h.html#a2bd51c26b394d17c3d62eb64f915a9cc">setLMPBias</a></div><div class="ttdeci">void setLMPBias(int16_t voltage)</div><div class="ttdoc">Define o bias do LMP.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:355</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a32d9922b6eff7e32c69eeb9d00a46bfe"><div class="ttname"><a href="_l_m_papp_8h.html#a32d9922b6eff7e32c69eeb9d00a46bfe">LMP_readVoltage</a></div><div class="ttdeci">void LMP_readVoltage(int16_t voltage)</div><div class="ttdoc">Lê a tensão do LMP.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:258</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a342283b10be5fe925777cd6ee82daa6b"><div class="ttname"><a href="_l_m_papp_8h.html#a342283b10be5fe925777cd6ee82daa6b">initLMP</a></div><div class="ttdeci">void initLMP(uint8_t)</div><div class="ttdoc">Inicializa o LMP com o pino MENB.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:397</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a3eb9780523f60eb88e6f1b772bd04b2a"><div class="ttname"><a href="_l_m_papp_8h.html#a3eb9780523f60eb88e6f1b772bd04b2a">iniciarMetodo</a></div><div class="ttdeci">void iniciarMetodo()</div><div class="ttdoc">Inicia o método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:449</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a42421a0a7ba2fc595e273e5a9a79cffc"><div class="ttname"><a href="_l_m_papp_8h.html#a42421a0a7ba2fc595e273e5a9a79cffc">setupLMP</a></div><div class="ttdeci">void setupLMP(uint8_t MENB)</div><div class="ttdoc">Inicializa o LMP com os pinos MENB.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:236</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a43eea38dc24e38149871bc4d7989a981"><div class="ttname"><a href="_l_m_papp_8h.html#a43eea38dc24e38149871bc4d7989a981">setVoltage</a></div><div class="ttdeci">void setVoltage(int16_t voltage)</div><div class="ttdoc">Define a tensão.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:296</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a4f67553db7df46130c2386194197151d"><div class="ttname"><a href="_l_m_papp_8h.html#a4f67553db7df46130c2386194197151d">setOutputsToZero</a></div><div class="ttdeci">void setOutputsToZero()</div><div class="ttdoc">Define as saídas para zero.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:441</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a847c3564f7c67a7f4ace5da91ce6884c"><div class="ttname"><a href="_l_m_papp_8h.html#a847c3564f7c67a7f4ace5da91ce6884c">print_data_CV</a></div><div class="ttdeci">void print_data_CV()</div><div class="ttdoc">Imprime os dados de CV.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:417</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a8726ef450415d60800487b60088d01a5"><div class="ttname"><a href="_l_m_papp_8h.html#a8726ef450415d60800487b60088d01a5">TaskRunMetodo</a></div><div class="ttdeci">void TaskRunMetodo(void *pvParameters)</div><div class="ttdoc">Tarefa para executar o método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:40</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a8847088b3e74412527d7e32272efc25b"><div class="ttname"><a href="_l_m_papp_8h.html#a8847088b3e74412527d7e32272efc25b">initLMPapp</a></div><div class="ttdeci">void initLMPapp(config_lmp, dac_t *)</div><div class="ttdoc">Inicializa o aplicativo LMP com configurações e ponteiro para DAC.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:374</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_a9ef1edd4559b0e7df7c71d12869402c5"><div class="ttname"><a href="_l_m_papp_8h.html#a9ef1edd4559b0e7df7c71d12869402c5">LMP_isReady</a></div><div class="ttdeci">boolean LMP_isReady(void)</div><div class="ttdoc">Verifica se o LMP está pronto.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:409</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_ade774a3e18020a5960d53571a2a0840b"><div class="ttname"><a href="_l_m_papp_8h.html#ade774a3e18020a5960d53571a2a0840b">reiniciarMetodo</a></div><div class="ttdeci">void reiniciarMetodo()</div><div class="ttdoc">Reinicia o método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:474</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_ae6df39fd924c7c94b224a2a75a506dfd"><div class="ttname"><a href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfd">MetodoType</a></div><div class="ttdeci">MetodoType</div><div class="ttdoc">Enumeração para tipos de métodos.</div><div class="ttdef"><b>Definição</b> LMPapp.h:73</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_ae6df39fd924c7c94b224a2a75a506dfda7d126e762c3ae7a0f3b02bc04d46607e"><div class="ttname"><a href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfda7d126e762c3ae7a0f3b02bc04d46607e">Amp_metodo</a></div><div class="ttdeci">@ Amp_metodo</div><div class="ttdoc">Amperometria.</div><div class="ttdef"><b>Definição</b> LMPapp.h:75</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_ae6df39fd924c7c94b224a2a75a506dfdaaf7a5f24ace465ee59da96ecde5cab55"><div class="ttname"><a href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfdaaf7a5f24ace465ee59da96ecde5cab55">Generic_type</a></div><div class="ttdeci">@ Generic_type</div><div class="ttdoc">Tipo Genérico.</div><div class="ttdef"><b>Definição</b> LMPapp.h:76</div></div>
+<div class="ttc" id="a_l_m_papp_8h_html_ae6df39fd924c7c94b224a2a75a506dfdac4aa97bc355072d9be5bd373787cfa94"><div class="ttname"><a href="_l_m_papp_8h.html#ae6df39fd924c7c94b224a2a75a506dfdac4aa97bc355072d9be5bd373787cfa94">CV_metodo</a></div><div class="ttdeci">@ CV_metodo</div><div class="ttdoc">Cyclic Voltammetry (CV)</div><div class="ttdef"><b>Definição</b> LMPapp.h:74</div></div>
+<div class="ttc" id="agroup___pin___definitions_html_ga1a7cbb7bf138520c626c17e6c7ffa6b7"><div class="ttname"><a href="group___pin___definitions.html#ga1a7cbb7bf138520c626c17e6c7ffa6b7">MENB</a></div><div class="ttdeci">const uint8_t MENB</div><div class="ttdoc">MENB.</div><div class="ttdef"><b>Definição</b> main.h:67</div></div>
+<div class="ttc" id="astruct_amp__setup_html"><div class="ttname"><a href="struct_amp__setup.html">Amp_setup</a></div><div class="ttdoc">Struct de configuração de Amperometria.</div><div class="ttdef"><b>Definição</b> LMPapp.h:48</div></div>
+<div class="ttc" id="astruct_amp__setup_html_a0c34b96ff6975e4e22f35e758cce54c9"><div class="ttname"><a href="struct_amp__setup.html#a0c34b96ff6975e4e22f35e758cce54c9">Amp_setup::v2</a></div><div class="ttdeci">int v2</div><div class="ttdef"><b>Definição</b> LMPapp.h:54</div></div>
+<div class="ttc" id="astruct_amp__setup_html_a21eb0a63043e4a667841468def0d1131"><div class="ttname"><a href="struct_amp__setup.html#a21eb0a63043e4a667841468def0d1131">Amp_setup::t2</a></div><div class="ttdeci">int t2</div><div class="ttdef"><b>Definição</b> LMPapp.h:55</div></div>
+<div class="ttc" id="astruct_amp__setup_html_a516cbd2314700f494845f06f334cad19"><div class="ttname"><a href="struct_amp__setup.html#a516cbd2314700f494845f06f334cad19">Amp_setup::pre_stepV</a></div><div class="ttdeci">int pre_stepV</div><div class="ttdef"><b>Definição</b> LMPapp.h:50</div></div>
+<div class="ttc" id="astruct_amp__setup_html_a7d4b192e594496d61862b9ef8ea611dd"><div class="ttname"><a href="struct_amp__setup.html#a7d4b192e594496d61862b9ef8ea611dd">Amp_setup::setToZero</a></div><div class="ttdeci">int setToZero</div><div class="ttdef"><b>Definição</b> LMPapp.h:58</div></div>
+<div class="ttc" id="astruct_amp__setup_html_abff55cdb9aefee1b60d6f68424199246"><div class="ttname"><a href="struct_amp__setup.html#abff55cdb9aefee1b60d6f68424199246">Amp_setup::lmpGain</a></div><div class="ttdeci">int lmpGain</div><div class="ttdef"><b>Definição</b> LMPapp.h:49</div></div>
+<div class="ttc" id="astruct_amp__setup_html_ac4a9efdaf08062730ac08cc8f42573c9"><div class="ttname"><a href="struct_amp__setup.html#ac4a9efdaf08062730ac08cc8f42573c9">Amp_setup::range</a></div><div class="ttdeci">int range</div><div class="ttdef"><b>Definição</b> LMPapp.h:57</div></div>
+<div class="ttc" id="astruct_amp__setup_html_adc652fb8aa4d2e74c1dfd77fca51cac8"><div class="ttname"><a href="struct_amp__setup.html#adc652fb8aa4d2e74c1dfd77fca51cac8">Amp_setup::samples</a></div><div class="ttdeci">int samples</div><div class="ttdef"><b>Definição</b> LMPapp.h:56</div></div>
+<div class="ttc" id="astruct_amp__setup_html_ae1d604f75be512df8459a5cb96859135"><div class="ttname"><a href="struct_amp__setup.html#ae1d604f75be512df8459a5cb96859135">Amp_setup::v1</a></div><div class="ttdeci">int v1</div><div class="ttdef"><b>Definição</b> LMPapp.h:52</div></div>
+<div class="ttc" id="astruct_amp__setup_html_af5faa7b07123c0ca655b3b753f892f7c"><div class="ttname"><a href="struct_amp__setup.html#af5faa7b07123c0ca655b3b753f892f7c">Amp_setup::t1</a></div><div class="ttdeci">int t1</div><div class="ttdef"><b>Definição</b> LMPapp.h:53</div></div>
+<div class="ttc" id="astruct_amp__setup_html_afd741788928d4fb438aef69eb1bd7b20"><div class="ttname"><a href="struct_amp__setup.html#afd741788928d4fb438aef69eb1bd7b20">Amp_setup::quietTime</a></div><div class="ttdeci">int quietTime</div><div class="ttdef"><b>Definição</b> LMPapp.h:51</div></div>
+<div class="ttc" id="astruct_c_v__setup_html"><div class="ttname"><a href="struct_c_v__setup.html">CV_setup</a></div><div class="ttdoc">Struct de configuração de Cyclic Voltammetry (CV).</div><div class="ttdef"><b>Definição</b> LMPapp.h:33</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a0e354da9d7f1847d07fb0a91052302a8"><div class="ttname"><a href="struct_c_v__setup.html#a0e354da9d7f1847d07fb0a91052302a8">CV_setup::lmpGain</a></div><div class="ttdeci">int lmpGain</div><div class="ttdef"><b>Definição</b> LMPapp.h:34</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a14ce01a54bf2f0a7007d472b3603e001"><div class="ttname"><a href="struct_c_v__setup.html#a14ce01a54bf2f0a7007d472b3603e001">CV_setup::vertex1</a></div><div class="ttdeci">int vertex1</div><div class="ttdef"><b>Definição</b> LMPapp.h:38</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a2de8a3ff91ab6ea9ba1e1f2c9619c9ba"><div class="ttname"><a href="struct_c_v__setup.html#a2de8a3ff91ab6ea9ba1e1f2c9619c9ba">CV_setup::cycles</a></div><div class="ttdeci">int cycles</div><div class="ttdef"><b>Definição</b> LMPapp.h:35</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a39d52bb89bafd55e168a78d76c7f1038"><div class="ttname"><a href="struct_c_v__setup.html#a39d52bb89bafd55e168a78d76c7f1038">CV_setup::setToZero</a></div><div class="ttdeci">int setToZero</div><div class="ttdef"><b>Definição</b> LMPapp.h:42</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a40ccc78add9b16caea49997128aaa066"><div class="ttname"><a href="struct_c_v__setup.html#a40ccc78add9b16caea49997128aaa066">CV_setup::endV</a></div><div class="ttdeci">int endV</div><div class="ttdef"><b>Definição</b> LMPapp.h:37</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a525c47f428e560ddfec436d98d81718d"><div class="ttname"><a href="struct_c_v__setup.html#a525c47f428e560ddfec436d98d81718d">CV_setup::vertex2</a></div><div class="ttdeci">int vertex2</div><div class="ttdef"><b>Definição</b> LMPapp.h:39</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_a8bc8b3b348f304c1d98890cc95cb1950"><div class="ttname"><a href="struct_c_v__setup.html#a8bc8b3b348f304c1d98890cc95cb1950">CV_setup::startV</a></div><div class="ttdeci">int startV</div><div class="ttdef"><b>Definição</b> LMPapp.h:36</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_ac1234eb539dbc858b8380158755c7f70"><div class="ttname"><a href="struct_c_v__setup.html#ac1234eb539dbc858b8380158755c7f70">CV_setup::rate</a></div><div class="ttdeci">int rate</div><div class="ttdef"><b>Definição</b> LMPapp.h:41</div></div>
+<div class="ttc" id="astruct_c_v__setup_html_af6834fb68e9cba79e319a3733db59158"><div class="ttname"><a href="struct_c_v__setup.html#af6834fb68e9cba79e319a3733db59158">CV_setup::stepV</a></div><div class="ttdeci">int stepV</div><div class="ttdef"><b>Definição</b> LMPapp.h:40</div></div>
+<div class="ttc" id="astruct_struct_control_metodo_html"><div class="ttname"><a href="struct_struct_control_metodo.html">StructControlMetodo</a></div><div class="ttdoc">Struct para controle de método.</div><div class="ttdef"><b>Definição</b> LMPapp.h:82</div></div>
+<div class="ttc" id="astruct_struct_control_metodo_html_a31acb809d7764ae8a809777a8654df59"><div class="ttname"><a href="struct_struct_control_metodo.html#a31acb809d7764ae8a809777a8654df59">StructControlMetodo::type</a></div><div class="ttdeci">MetodoType type</div><div class="ttdoc">Tipo de método.</div><div class="ttdef"><b>Definição</b> LMPapp.h:83</div></div>
+<div class="ttc" id="astruct_struct_control_metodo_html_aff8f8ac1b0977b353eee8b1454be7d53"><div class="ttname"><a href="struct_struct_control_metodo.html#aff8f8ac1b0977b353eee8b1454be7d53">StructControlMetodo::metodo</a></div><div class="ttdeci">UnionMetodos metodo</div><div class="ttdoc">Configuração do método.</div><div class="ttdef"><b>Definição</b> LMPapp.h:84</div></div>
+<div class="ttc" id="astruct_struct_control_output_html"><div class="ttname"><a href="struct_struct_control_output.html">StructControlOutput</a></div><div class="ttdoc">Struct para controle de saída.</div><div class="ttdef"><b>Definição</b> LMPapp.h:123</div></div>
+<div class="ttc" id="astruct_struct_control_output_html_ae302c34f84ece0cad9ebb02f103741fc"><div class="ttname"><a href="struct_struct_control_output.html#ae302c34f84ece0cad9ebb02f103741fc">StructControlOutput::output</a></div><div class="ttdeci">UnionOutput output</div><div class="ttdoc">Dados de saída.</div><div class="ttdef"><b>Definição</b> LMPapp.h:125</div></div>
+<div class="ttc" id="astruct_struct_control_output_html_aececbe1c68e1c505089d36390b41193c"><div class="ttname"><a href="struct_struct_control_output.html#aececbe1c68e1c505089d36390b41193c">StructControlOutput::type</a></div><div class="ttdeci">MetodoType type</div><div class="ttdoc">Tipo de método.</div><div class="ttdef"><b>Definição</b> LMPapp.h:124</div></div>
+<div class="ttc" id="astructconfig__lmp_html"><div class="ttname"><a href="structconfig__lmp.html">config_lmp</a></div><div class="ttdoc">Struct de configuração inicial do LMP.</div><div class="ttdef"><b>Definição</b> LMPapp.h:23</div></div>
+<div class="ttc" id="astructconfig__lmp_html_a7c3df3aac0c59961a99f8f1333490248"><div class="ttname"><a href="structconfig__lmp.html#a7c3df3aac0c59961a99f8f1333490248">config_lmp::lmpGain</a></div><div class="ttdeci">uint8_t lmpGain</div><div class="ttdef"><b>Definição</b> LMPapp.h:24</div></div>
+<div class="ttc" id="astructconfig__lmp_html_aa6ff2ac68d46071824f1509d09542d89"><div class="ttname"><a href="structconfig__lmp.html#aa6ff2ac68d46071824f1509d09542d89">config_lmp::bias_setting</a></div><div class="ttdeci">uint8_t bias_setting</div><div class="ttdef"><b>Definição</b> LMPapp.h:27</div></div>
+<div class="ttc" id="astructconfig__lmp_html_aba30a3084636cc4a55c88f1873388bfd"><div class="ttname"><a href="structconfig__lmp.html#aba30a3084636cc4a55c88f1873388bfd">config_lmp::RLoad</a></div><div class="ttdeci">uint8_t RLoad</div><div class="ttdef"><b>Definição</b> LMPapp.h:25</div></div>
+<div class="ttc" id="astructconfig__lmp_html_ae9f9e9930ccfc3ad5da4ce8a8e4f022f"><div class="ttname"><a href="structconfig__lmp.html#ae9f9e9930ccfc3ad5da4ce8a8e4f022f">config_lmp::IntZ</a></div><div class="ttdeci">uint8_t IntZ</div><div class="ttdef"><b>Definição</b> LMPapp.h:26</div></div>
+<div class="ttc" id="astructdata__print___amp_html"><div class="ttname"><a href="structdata__print___amp.html">data_print_Amp</a></div><div class="ttdoc">Struct de dados para impressão em Amperometria.</div><div class="ttdef"><b>Definição</b> LMPapp.h:105</div></div>
+<div class="ttc" id="astructdata__print___amp_html_a761d921552107dd32e8829169cf4889d"><div class="ttname"><a href="structdata__print___amp.html#a761d921552107dd32e8829169cf4889d">data_print_Amp::voltage</a></div><div class="ttdeci">float voltage</div><div class="ttdef"><b>Definição</b> LMPapp.h:106</div></div>
+<div class="ttc" id="astructdata__print___amp_html_a81ca43b85d12b8dfc619443f06a89e24"><div class="ttname"><a href="structdata__print___amp.html#a81ca43b85d12b8dfc619443f06a89e24">data_print_Amp::current</a></div><div class="ttdeci">float current</div><div class="ttdef"><b>Definição</b> LMPapp.h:108</div></div>
+<div class="ttc" id="astructdata__print___amp_html_ae855c61b5e9773acf9d19e4c9638aec7"><div class="ttname"><a href="structdata__print___amp.html#ae855c61b5e9773acf9d19e4c9638aec7">data_print_Amp::time</a></div><div class="ttdeci">unsigned long time</div><div class="ttdef"><b>Definição</b> LMPapp.h:107</div></div>
+<div class="ttc" id="astructdata__print___c_v_html"><div class="ttname"><a href="structdata__print___c_v.html">data_print_CV</a></div><div class="ttdoc">Struct de dados para impressão em CV.</div><div class="ttdef"><b>Definição</b> LMPapp.h:90</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a144817a90f07db84245abf76522500ea"><div class="ttname"><a href="structdata__print___c_v.html#a144817a90f07db84245abf76522500ea">data_print_CV::cycle</a></div><div class="ttdeci">uint8_t cycle</div><div class="ttdef"><b>Definição</b> LMPapp.h:97</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a1ba2bf80a59032af5561df45aa13d119"><div class="ttname"><a href="structdata__print___c_v.html#a1ba2bf80a59032af5561df45aa13d119">data_print_CV::current_f</a></div><div class="ttdeci">float current_f</div><div class="ttdef"><b>Definição</b> LMPapp.h:99</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a27fc740d261815e73d35d9a8f6b4073d"><div class="ttname"><a href="structdata__print___c_v.html#a27fc740d261815e73d35d9a8f6b4073d">data_print_CV::current2</a></div><div class="ttdeci">float current2</div><div class="ttdef"><b>Definição</b> LMPapp.h:96</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a45668e40d5cce5673b5e3c25d4eab422"><div class="ttname"><a href="structdata__print___c_v.html#a45668e40d5cce5673b5e3c25d4eab422">data_print_CV::c1</a></div><div class="ttdeci">float c1</div><div class="ttdef"><b>Definição</b> LMPapp.h:94</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a65181dfe199329330ef43ea7487ad475"><div class="ttname"><a href="structdata__print___c_v.html#a65181dfe199329330ef43ea7487ad475">data_print_CV::voltage_f</a></div><div class="ttdeci">float voltage_f</div><div class="ttdef"><b>Definição</b> LMPapp.h:98</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a84f09b3275b3907b900daaf2e3174d5d"><div class="ttname"><a href="structdata__print___c_v.html#a84f09b3275b3907b900daaf2e3174d5d">data_print_CV::zero</a></div><div class="ttdeci">uint16_t zero</div><div class="ttdef"><b>Definição</b> LMPapp.h:91</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a874dd4fd5a234c25b098f75bf71376fe"><div class="ttname"><a href="structdata__print___c_v.html#a874dd4fd5a234c25b098f75bf71376fe">data_print_CV::current</a></div><div class="ttdeci">float current</div><div class="ttdef"><b>Definição</b> LMPapp.h:95</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_ad28e4f4168959947c50547046bac3d61"><div class="ttname"><a href="structdata__print___c_v.html#ad28e4f4168959947c50547046bac3d61">data_print_CV::bias</a></div><div class="ttdeci">double bias</div><div class="ttdef"><b>Definição</b> LMPapp.h:92</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_adc9f603830255974228c792d1cb47ab8"><div class="ttname"><a href="structdata__print___c_v.html#adc9f603830255974228c792d1cb47ab8">data_print_CV::vout</a></div><div class="ttdeci">float vout</div><div class="ttdef"><b>Definição</b> LMPapp.h:93</div></div>
+<div class="ttc" id="aunion_union_metodos_html"><div class="ttname"><a href="union_union_metodos.html">UnionMetodos</a></div><div class="ttdoc">Union de configuração de métodos.</div><div class="ttdef"><b>Definição</b> LMPapp.h:65</div></div>
+<div class="ttc" id="aunion_union_metodos_html_a21819173c5fb7dc3f96d30117f64f8d1"><div class="ttname"><a href="union_union_metodos.html#a21819173c5fb7dc3f96d30117f64f8d1">UnionMetodos::amp</a></div><div class="ttdeci">Amp_setup amp</div><div class="ttdoc">Configuração para Amperometria.</div><div class="ttdef"><b>Definição</b> LMPapp.h:67</div></div>
+<div class="ttc" id="aunion_union_metodos_html_ae1e97b7a133327563428d907383cc880"><div class="ttname"><a href="union_union_metodos.html#ae1e97b7a133327563428d907383cc880">UnionMetodos::cv</a></div><div class="ttdeci">CV_setup cv</div><div class="ttdoc">Configuração para CV.</div><div class="ttdef"><b>Definição</b> LMPapp.h:66</div></div>
+<div class="ttc" id="aunion_union_output_html"><div class="ttname"><a href="union_union_output.html">UnionOutput</a></div><div class="ttdoc">Union de dados de impressão.</div><div class="ttdef"><b>Definição</b> LMPapp.h:114</div></div>
+<div class="ttc" id="aunion_union_output_html_a09df30a192d35a1e0f9803c498c4b16a"><div class="ttname"><a href="union_union_output.html#a09df30a192d35a1e0f9803c498c4b16a">UnionOutput::amp</a></div><div class="ttdeci">data_print_Amp amp</div><div class="ttdoc">Dados de impressão para Amperometria.</div><div class="ttdef"><b>Definição</b> LMPapp.h:116</div></div>
+<div class="ttc" id="aunion_union_output_html_a5ccf56666b463ef3dc2704edf4d1f08e"><div class="ttname"><a href="union_union_output.html#a5ccf56666b463ef3dc2704edf4d1f08e">UnionOutput::cv</a></div><div class="ttdeci">data_print_CV cv</div><div class="ttdoc">Dados de impressão para CV.</div><div class="ttdef"><b>Definição</b> LMPapp.h:115</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Potenciostato_Firmware: Referência do Arquivo include/main.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="CV_icon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">Potenciostato_Firmware<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Poli – USP e IQ-USP</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo main.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declaração de variáveis e funções para um sistema FreeRTOS.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &lt;Wire.h&gt;</code><br />
+<code>#include &lt;SPI.h&gt;</code><br />
+<code>#include &quot;ads131a04.h&quot;</code><br />
+<code>#include &quot;dac80501.h&quot;</code><br />
+</div>
+<p><a href="main_8h_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ga8726ef450415d60800487b60088d01a5" id="r_ga8726ef450415d60800487b60088d01a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga8726ef450415d60800487b60088d01a5">TaskRunMetodo</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:ga8726ef450415d60800487b60088d01a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função da tarefa que executa o método.  <br /></td></tr>
+<tr class="separator:ga8726ef450415d60800487b60088d01a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d21413cc903febe9fb2b8eab5839d84" id="r_ga3d21413cc903febe9fb2b8eab5839d84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga3d21413cc903febe9fb2b8eab5839d84">TaskReadSerial</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:ga3d21413cc903febe9fb2b8eab5839d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função da tarefa que lê dados da serial.  <br /></td></tr>
+<tr class="separator:ga3d21413cc903febe9fb2b8eab5839d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac5118a046f2d7f65f4a0db3a4a20d22" id="r_gaac5118a046f2d7f65f4a0db3a4a20d22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#gaac5118a046f2d7f65f4a0db3a4a20d22">TaskBlink</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:gaac5118a046f2d7f65f4a0db3a4a20d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função da tarefa que controla o LED.  <br /></td></tr>
+<tr class="separator:gaac5118a046f2d7f65f4a0db3a4a20d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04c3fb12e189989dbba2838c83e66ced" id="r_ga04c3fb12e189989dbba2838c83e66ced"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga04c3fb12e189989dbba2838c83e66ced">TaskCmd</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:ga04c3fb12e189989dbba2838c83e66ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função da tarefa que pega comandos para iniciar o método.  <br /></td></tr>
+<tr class="separator:ga04c3fb12e189989dbba2838c83e66ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4c82ce14e6ba6a657753545a5222bae" id="r_gaa4c82ce14e6ba6a657753545a5222bae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#gaa4c82ce14e6ba6a657753545a5222bae">TaskOutput</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:gaa4c82ce14e6ba6a657753545a5222bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função da tarefa que realiza a saída dos dados.  <br /></td></tr>
+<tr class="separator:gaa4c82ce14e6ba6a657753545a5222bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:ga7dbb5e081dd5548cc2f5eb94b8dce9da" id="r_ga7dbb5e081dd5548cc2f5eb94b8dce9da"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___free_r_t_o_s___variables.html#ga7dbb5e081dd5548cc2f5eb94b8dce9da">xSemaphore_writeLMP</a></td></tr>
+<tr class="memdesc:ga7dbb5e081dd5548cc2f5eb94b8dce9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semáforo para escrita LMP.  <br /></td></tr>
+<tr class="separator:ga7dbb5e081dd5548cc2f5eb94b8dce9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e8479e068b85c548eb0740800d068d8" id="r_ga3e8479e068b85c548eb0740800d068d8"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___free_r_t_o_s___variables.html#ga3e8479e068b85c548eb0740800d068d8">taskMetodo_Handle</a></td></tr>
+<tr class="memdesc:ga3e8479e068b85c548eb0740800d068d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle da tarefa do método.  <br /></td></tr>
+<tr class="separator:ga3e8479e068b85c548eb0740800d068d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga794554361f9442ce57c822dd4edeb6f7" id="r_ga794554361f9442ce57c822dd4edeb6f7"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___free_r_t_o_s___variables.html#ga794554361f9442ce57c822dd4edeb6f7">Metodo_queue</a></td></tr>
+<tr class="memdesc:ga794554361f9442ce57c822dd4edeb6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila para o método.  <br /></td></tr>
+<tr class="separator:ga794554361f9442ce57c822dd4edeb6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b69b7fb53578f24e650b782fc7265aa" id="r_ga2b69b7fb53578f24e650b782fc7265aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga2b69b7fb53578f24e650b782fc7265aa">inicia_blink</a></td></tr>
+<tr class="memdesc:ga2b69b7fb53578f24e650b782fc7265aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag para iniciar o LED.  <br /></td></tr>
+<tr class="separator:ga2b69b7fb53578f24e650b782fc7265aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f35c837eeffe34391e35516419ccf4d" id="r_ga2f35c837eeffe34391e35516419ccf4d"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga2f35c837eeffe34391e35516419ccf4d">cmd_queue</a></td></tr>
+<tr class="memdesc:ga2f35c837eeffe34391e35516419ccf4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila para comandos.  <br /></td></tr>
+<tr class="separator:ga2f35c837eeffe34391e35516419ccf4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga715c498ab7072249ef1dfa268f549731" id="r_ga715c498ab7072249ef1dfa268f549731"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga715c498ab7072249ef1dfa268f549731">output_queue</a></td></tr>
+<tr class="memdesc:ga715c498ab7072249ef1dfa268f549731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila para saída de dados.  <br /></td></tr>
+<tr class="separator:ga715c498ab7072249ef1dfa268f549731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c71498c2a32656660e65a4b0f095381" id="r_ga2c71498c2a32656660e65a4b0f095381"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga2c71498c2a32656660e65a4b0f095381">drdy_ads</a> = 27</td></tr>
+<tr class="separator:ga2c71498c2a32656660e65a4b0f095381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae63428939e1220159d6d1696c526ffac" id="r_gae63428939e1220159d6d1696c526ffac"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#gae63428939e1220159d6d1696c526ffac">reset_ads</a> = 25</td></tr>
+<tr class="separator:gae63428939e1220159d6d1696c526ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bf4418859441e3fd5ce20d88f3d63ba" id="r_ga1bf4418859441e3fd5ce20d88f3d63ba"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga1bf4418859441e3fd5ce20d88f3d63ba">cs_ads</a> = 5</td></tr>
+<tr class="separator:ga1bf4418859441e3fd5ce20d88f3d63ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa7b5072e7c597692b29f66fd4f28aa7" id="r_gafa7b5072e7c597692b29f66fd4f28aa7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#gafa7b5072e7c597692b29f66fd4f28aa7">miso_ads</a> = 19</td></tr>
+<tr class="separator:gafa7b5072e7c597692b29f66fd4f28aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c139efc6ce8fad8fe640ad9660524ef" id="r_ga7c139efc6ce8fad8fe640ad9660524ef"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga7c139efc6ce8fad8fe640ad9660524ef">mosi_ads</a> = 23</td></tr>
+<tr class="separator:ga7c139efc6ce8fad8fe640ad9660524ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48bef5ace0fa519e2a6b77b11e27ef47" id="r_ga48bef5ace0fa519e2a6b77b11e27ef47"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga48bef5ace0fa519e2a6b77b11e27ef47">clk_ads</a> = 18</td></tr>
+<tr class="separator:ga48bef5ace0fa519e2a6b77b11e27ef47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96545599eb0a7d75cb3ab10392e22ac8" id="r_ga96545599eb0a7d75cb3ab10392e22ac8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga96545599eb0a7d75cb3ab10392e22ac8">cs_dac</a> = 33</td></tr>
+<tr class="separator:ga96545599eb0a7d75cb3ab10392e22ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdf4d1a185736cea465c464d9ed1a293" id="r_gacdf4d1a185736cea465c464d9ed1a293"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#gacdf4d1a185736cea465c464d9ed1a293">miso_dac</a> = 19</td></tr>
+<tr class="separator:gacdf4d1a185736cea465c464d9ed1a293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf359046eadcab602ebe192c08813dcbd" id="r_gaf359046eadcab602ebe192c08813dcbd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#gaf359046eadcab602ebe192c08813dcbd">mosi_dac</a> = 23</td></tr>
+<tr class="separator:gaf359046eadcab602ebe192c08813dcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa4e8b15629c5c6558e95d1c3998792a" id="r_gafa4e8b15629c5c6558e95d1c3998792a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#gafa4e8b15629c5c6558e95d1c3998792a">clk_dac</a> = 18</td></tr>
+<tr class="separator:gafa4e8b15629c5c6558e95d1c3998792a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3309d97b5a3c5c2fc675eff79f202118" id="r_ga3309d97b5a3c5c2fc675eff79f202118"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga3309d97b5a3c5c2fc675eff79f202118">LED_Status_1</a> = 2</td></tr>
+<tr class="separator:ga3309d97b5a3c5c2fc675eff79f202118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga879efb0303e781f6e617905b5c643b9a" id="r_ga879efb0303e781f6e617905b5c643b9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga879efb0303e781f6e617905b5c643b9a">LED_Status_2</a> = 16</td></tr>
+<tr class="separator:ga879efb0303e781f6e617905b5c643b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a7cbb7bf138520c626c17e6c7ffa6b7" id="r_ga1a7cbb7bf138520c626c17e6c7ffa6b7"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga1a7cbb7bf138520c626c17e6c7ffa6b7">MENB</a> = 26</td></tr>
+<tr class="memdesc:ga1a7cbb7bf138520c626c17e6c7ffa6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">MENB.  <br /></td></tr>
+<tr class="separator:ga1a7cbb7bf138520c626c17e6c7ffa6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8460517246c4a3cb34f58fec1e7382c1" id="r_ga8460517246c4a3cb34f58fec1e7382c1"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga8460517246c4a3cb34f58fec1e7382c1">LMP_C1</a> = 33</td></tr>
+<tr class="memdesc:ga8460517246c4a3cb34f58fec1e7382c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">LMP_C1.  <br /></td></tr>
+<tr class="separator:ga8460517246c4a3cb34f58fec1e7382c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga636048911b99d3bf0c17916d20d657b5" id="r_ga636048911b99d3bf0c17916d20d657b5"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga636048911b99d3bf0c17916d20d657b5">LMP_C2</a> = 32</td></tr>
+<tr class="memdesc:ga636048911b99d3bf0c17916d20d657b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">LMP_C2.  <br /></td></tr>
+<tr class="separator:ga636048911b99d3bf0c17916d20d657b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a3b319c284ae33076cd87474da6a1ee" id="r_ga7a3b319c284ae33076cd87474da6a1ee"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga7a3b319c284ae33076cd87474da6a1ee">LMP</a> = 35</td></tr>
+<tr class="memdesc:ga7a3b319c284ae33076cd87474da6a1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">LMP.  <br /></td></tr>
+<tr class="separator:ga7a3b319c284ae33076cd87474da6a1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72c68365b493947161dc0a96f9a15b8e" id="r_ga72c68365b493947161dc0a96f9a15b8e"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___pin___definitions.html#ga72c68365b493947161dc0a96f9a15b8e">anti_aliased</a> = 34</td></tr>
+<tr class="memdesc:ga72c68365b493947161dc0a96f9a15b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anti-aliased.  <br /></td></tr>
+<tr class="separator:ga72c68365b493947161dc0a96f9a15b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Declaração de variáveis e funções para um sistema FreeRTOS. </p>
+<p>Este arquivo contém as declarações de variáveis e funções para um sistema que utiliza o FreeRTOS. As variáveis relacionadas ao FreeRTOS são separadas das demais. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
