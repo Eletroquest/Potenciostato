@@ -1,0 +1,951 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BLE_Central_Firmware: Referência do Arquivo D:/Programas/VSCode/PlatformIO/Potenciostato/Potenciostato/src/LMPapp.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="CV_icon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">BLE_Central_Firmware<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">ESP32-Para projeto Potenciostato</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7251d7cdf3a35d5efa456d1a1353159f.html">Potenciostato</a></li><li class="navelem"><a class="el" href="dir_2118b71b1944c81630b06e8b4e843a90.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo LMPapp.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação do aplicativo LMP.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_l_m_papp_8h_source.html">LMPapp.h</a>&quot;</code><br />
+<code>#include &quot;ads131a04.h&quot;</code><br />
+<code>#include &quot;dac80501.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ga8726ef450415d60800487b60088d01a5" id="r_ga8726ef450415d60800487b60088d01a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga8726ef450415d60800487b60088d01a5">TaskRunMetodo</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:ga8726ef450415d60800487b60088d01a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarefa para executar o método.  <br /></td></tr>
+<tr class="separator:ga8726ef450415d60800487b60088d01a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42421a0a7ba2fc595e273e5a9a79cffc" id="r_a42421a0a7ba2fc595e273e5a9a79cffc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a42421a0a7ba2fc595e273e5a9a79cffc">setupLMP</a> (uint8_t <a class="el" href="group___pin___definitions.html#ga1a7cbb7bf138520c626c17e6c7ffa6b7">MENB</a>)</td></tr>
+<tr class="memdesc:a42421a0a7ba2fc595e273e5a9a79cffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o LMP com o pino MENB.  <br /></td></tr>
+<tr class="separator:a42421a0a7ba2fc595e273e5a9a79cffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2536e3d60035cc7936c74786113f8a46" id="r_a2536e3d60035cc7936c74786113f8a46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a2536e3d60035cc7936c74786113f8a46">LMP_setVoltage</a> (int16_t voltage)</td></tr>
+<tr class="memdesc:a2536e3d60035cc7936c74786113f8a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a tensão do LMP.  <br /></td></tr>
+<tr class="separator:a2536e3d60035cc7936c74786113f8a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d9922b6eff7e32c69eeb9d00a46bfe" id="r_a32d9922b6eff7e32c69eeb9d00a46bfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a32d9922b6eff7e32c69eeb9d00a46bfe">LMP_readVoltage</a> (int16_t voltage)</td></tr>
+<tr class="memdesc:a32d9922b6eff7e32c69eeb9d00a46bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê a tensão do LMP.  <br /></td></tr>
+<tr class="separator:a32d9922b6eff7e32c69eeb9d00a46bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43eea38dc24e38149871bc4d7989a981" id="r_a43eea38dc24e38149871bc4d7989a981"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a43eea38dc24e38149871bc4d7989a981">setVoltage</a> (int16_t voltage)</td></tr>
+<tr class="memdesc:a43eea38dc24e38149871bc4d7989a981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a tensão do DAC.  <br /></td></tr>
+<tr class="separator:a43eea38dc24e38149871bc4d7989a981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd51c26b394d17c3d62eb64f915a9cc" id="r_a2bd51c26b394d17c3d62eb64f915a9cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a2bd51c26b394d17c3d62eb64f915a9cc">setLMPBias</a> (int16_t voltage)</td></tr>
+<tr class="memdesc:a2bd51c26b394d17c3d62eb64f915a9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o bias do LMP.  <br /></td></tr>
+<tr class="separator:a2bd51c26b394d17c3d62eb64f915a9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd6e1e3fa6962643543a353997fc0de" id="r_a5bd6e1e3fa6962643543a353997fc0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a5bd6e1e3fa6962643543a353997fc0de">initLMPapp</a> (<a class="el" href="structconfig__lmp.html">config_lmp</a> config_lmp_d, dac_t *dac_copy)</td></tr>
+<tr class="memdesc:a5bd6e1e3fa6962643543a353997fc0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o aplicativo LMP com configurações e ponteiro para DAC.  <br /></td></tr>
+<tr class="separator:a5bd6e1e3fa6962643543a353997fc0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cf1fc3eae02e134f7361885ba346a1" id="r_aa1cf1fc3eae02e134f7361885ba346a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#aa1cf1fc3eae02e134f7361885ba346a1">initLMP</a> (uint8_t lmpGain)</td></tr>
+<tr class="memdesc:aa1cf1fc3eae02e134f7361885ba346a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o LMP com o ganho especificado.  <br /></td></tr>
+<tr class="separator:aa1cf1fc3eae02e134f7361885ba346a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadaf4f965e633869a4efdbefde081a82" id="r_aadaf4f965e633869a4efdbefde081a82"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#aadaf4f965e633869a4efdbefde081a82">LMP_isReady</a> ()</td></tr>
+<tr class="memdesc:aadaf4f965e633869a4efdbefde081a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o LMP está pronto.  <br /></td></tr>
+<tr class="separator:aadaf4f965e633869a4efdbefde081a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a847c3564f7c67a7f4ace5da91ce6884c" id="r_a847c3564f7c67a7f4ace5da91ce6884c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a847c3564f7c67a7f4ace5da91ce6884c">print_data_CV</a> ()</td></tr>
+<tr class="memdesc:a847c3564f7c67a7f4ace5da91ce6884c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime os dados de CV.  <br /></td></tr>
+<tr class="separator:a847c3564f7c67a7f4ace5da91ce6884c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f67553db7df46130c2386194197151d" id="r_a4f67553db7df46130c2386194197151d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a4f67553db7df46130c2386194197151d">setOutputsToZero</a> ()</td></tr>
+<tr class="memdesc:a4f67553db7df46130c2386194197151d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define as saídas para zero.  <br /></td></tr>
+<tr class="separator:a4f67553db7df46130c2386194197151d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb9780523f60eb88e6f1b772bd04b2a" id="r_a3eb9780523f60eb88e6f1b772bd04b2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a3eb9780523f60eb88e6f1b772bd04b2a">iniciarMetodo</a> ()</td></tr>
+<tr class="memdesc:a3eb9780523f60eb88e6f1b772bd04b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia a execução do método.  <br /></td></tr>
+<tr class="separator:a3eb9780523f60eb88e6f1b772bd04b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c780630713d9e6c1240965140af3131" id="r_a1c780630713d9e6c1240965140af3131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a1c780630713d9e6c1240965140af3131">pararMetodo</a> ()</td></tr>
+<tr class="memdesc:a1c780630713d9e6c1240965140af3131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Para a execução do método.  <br /></td></tr>
+<tr class="separator:a1c780630713d9e6c1240965140af3131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade774a3e18020a5960d53571a2a0840b" id="r_ade774a3e18020a5960d53571a2a0840b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#ade774a3e18020a5960d53571a2a0840b">reiniciarMetodo</a> ()</td></tr>
+<tr class="memdesc:ade774a3e18020a5960d53571a2a0840b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicia a execução do método.  <br /></td></tr>
+<tr class="separator:ade774a3e18020a5960d53571a2a0840b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:ga2b69b7fb53578f24e650b782fc7265aa" id="r_ga2b69b7fb53578f24e650b782fc7265aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga2b69b7fb53578f24e650b782fc7265aa">inicia_blink</a></td></tr>
+<tr class="memdesc:ga2b69b7fb53578f24e650b782fc7265aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag para iniciar o LED.  <br /></td></tr>
+<tr class="separator:ga2b69b7fb53578f24e650b782fc7265aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0136a65ba28e9920028b29b7165fcee2" id="r_a0136a65ba28e9920028b29b7165fcee2"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a0136a65ba28e9920028b29b7165fcee2">CVsetup_queue</a></td></tr>
+<tr class="separator:a0136a65ba28e9920028b29b7165fcee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa774c100e9ca7a6ed1fc65067855e23c" id="r_aa774c100e9ca7a6ed1fc65067855e23c"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#aa774c100e9ca7a6ed1fc65067855e23c">Ampsetup_queue</a></td></tr>
+<tr class="separator:aa774c100e9ca7a6ed1fc65067855e23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga794554361f9442ce57c822dd4edeb6f7" id="r_ga794554361f9442ce57c822dd4edeb6f7"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___free_r_t_o_s___variables.html#ga794554361f9442ce57c822dd4edeb6f7">Metodo_queue</a></td></tr>
+<tr class="memdesc:ga794554361f9442ce57c822dd4edeb6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila para o método.  <br /></td></tr>
+<tr class="separator:ga794554361f9442ce57c822dd4edeb6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e8479e068b85c548eb0740800d068d8" id="r_ga3e8479e068b85c548eb0740800d068d8"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___free_r_t_o_s___variables.html#ga3e8479e068b85c548eb0740800d068d8">taskMetodo_Handle</a></td></tr>
+<tr class="memdesc:ga3e8479e068b85c548eb0740800d068d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle da tarefa do método.  <br /></td></tr>
+<tr class="separator:ga3e8479e068b85c548eb0740800d068d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga715c498ab7072249ef1dfa268f549731" id="r_ga715c498ab7072249ef1dfa268f549731"><td class="memItemLeft" align="right" valign="top">xQueueHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___other___variables.html#ga715c498ab7072249ef1dfa268f549731">output_queue</a></td></tr>
+<tr class="memdesc:ga715c498ab7072249ef1dfa268f549731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila para saída de dados.  <br /></td></tr>
+<tr class="separator:ga715c498ab7072249ef1dfa268f549731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dbb5e081dd5548cc2f5eb94b8dce9da" id="r_ga7dbb5e081dd5548cc2f5eb94b8dce9da"><td class="memItemLeft" align="right" valign="top">SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___free_r_t_o_s___variables.html#ga7dbb5e081dd5548cc2f5eb94b8dce9da">xSemaphore_writeLMP</a></td></tr>
+<tr class="memdesc:ga7dbb5e081dd5548cc2f5eb94b8dce9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semáforo para escrita LMP.  <br /></td></tr>
+<tr class="separator:ga7dbb5e081dd5548cc2f5eb94b8dce9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24b00a74017ea09fc136de7992d1e1d" id="r_ac24b00a74017ea09fc136de7992d1e1d"><td class="memItemLeft" align="right" valign="top">LMP91000&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a> = LMP91000()</td></tr>
+<tr class="separator:ac24b00a74017ea09fc136de7992d1e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d680c514847e2de39df2db673eb1655" id="r_a9d680c514847e2de39df2db673eb1655"><td class="memItemLeft" align="right" valign="top">adc_data_struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a9d680c514847e2de39df2db673eb1655">dataStruct</a></td></tr>
+<tr class="separator:a9d680c514847e2de39df2db673eb1655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0f7f688e832d5ce7b2de6907d4cf5c" id="r_acb0f7f688e832d5ce7b2de6907d4cf5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdata__print___c_v.html">data_print_CV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a></td></tr>
+<tr class="separator:acb0f7f688e832d5ce7b2de6907d4cf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aea92183660e1650e6c61178f729542" id="r_a3aea92183660e1650e6c61178f729542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdata__print___amp.html">data_print_Amp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a3aea92183660e1650e6c61178f729542">data_Amp_f</a></td></tr>
+<tr class="separator:a3aea92183660e1650e6c61178f729542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4dd852b862d118f865971acc6e78aa2" id="r_af4dd852b862d118f865971acc6e78aa2"><td class="memItemLeft" align="right" valign="top">dac_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#af4dd852b862d118f865971acc6e78aa2">dac_f</a></td></tr>
+<tr class="separator:af4dd852b862d118f865971acc6e78aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c9a97ff77ab6ecd82435b44abbdc9c" id="r_a42c9a97ff77ab6ecd82435b44abbdc9c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a> = 0</td></tr>
+<tr class="separator:a42c9a97ff77ab6ecd82435b44abbdc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317b005833afe427d3193968d57c29bc" id="r_a317b005833afe427d3193968d57c29bc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> = 1500</td></tr>
+<tr class="separator:a317b005833afe427d3193968d57c29bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3188ac33bdc0a940a3819eb82b320151" id="r_a3188ac33bdc0a940a3819eb82b320151"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a3188ac33bdc0a940a3819eb82b320151">v_tolerance</a> = 0.008</td></tr>
+<tr class="separator:a3188ac33bdc0a940a3819eb82b320151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa11dd3f094b4f66a937036588dc9ae" id="r_abaa11dd3f094b4f66a937036588dc9ae"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#abaa11dd3f094b4f66a937036588dc9ae">opVolt</a> = 4900</td></tr>
+<tr class="separator:abaa11dd3f094b4f66a937036588dc9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b77fa28a2cf0965692ebd9cc4451f8d" id="r_a7b77fa28a2cf0965692ebd9cc4451f8d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a> = 0</td></tr>
+<tr class="separator:a7b77fa28a2cf0965692ebd9cc4451f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36995a42bcb661cb28d8c9c48d7ff9f4" id="r_a36995a42bcb661cb28d8c9c48d7ff9f4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a36995a42bcb661cb28d8c9c48d7ff9f4">IntZ</a> = 2</td></tr>
+<tr class="separator:a36995a42bcb661cb28d8c9c48d7ff9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4363b65a393b0ca493fa20d6c1e244c2" id="r_a4363b65a393b0ca493fa20d6c1e244c2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a4363b65a393b0ca493fa20d6c1e244c2">vref</a> = 5</td></tr>
+<tr class="separator:a4363b65a393b0ca493fa20d6c1e244c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39affe33842907582fee290b908633f7" id="r_a39affe33842907582fee290b908633f7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_m_papp_8cpp.html#a39affe33842907582fee290b908633f7">RFB</a> = 10000</td></tr>
+<tr class="separator:a39affe33842907582fee290b908633f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação do aplicativo LMP. </p>
+</div><h2 class="groupheader">Funções</h2>
+<a id="a3eb9780523f60eb88e6f1b772bd04b2a" name="a3eb9780523f60eb88e6f1b772bd04b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb9780523f60eb88e6f1b772bd04b2a">&#9670;&#160;</a></span>iniciarMetodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iniciarMetodo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicia a execução do método. </p>
+<p>Inicia o método. </p>
+<div class="fragment"><div class="line"><span class="lineno">  449</span>{</div>
+<div class="line"><span class="lineno">  450</span>  <span class="comment">// Cria a tarefa</span></div>
+<div class="line"><span class="lineno">  451</span>  BaseType_t taskCreationResult = xTaskCreate(</div>
+<div class="line"><span class="lineno">  452</span>      <a class="code hl_function" href="group___other___variables.html#ga8726ef450415d60800487b60088d01a5">TaskRunMetodo</a>, <span class="stringliteral">&quot;Metodo&quot;</span> <span class="comment">// A name just for humans</span></div>
+<div class="line"><span class="lineno">  453</span>      ,</div>
+<div class="line"><span class="lineno">  454</span>      8192 <span class="comment">// tamanho da task</span></div>
+<div class="line"><span class="lineno">  455</span>      ,</div>
+<div class="line"><span class="lineno">  456</span>      NULL, 1 <span class="comment">// Prioridade, sendo 1 a mais alta e 4 a mais baixa.</span></div>
+<div class="line"><span class="lineno">  457</span>      ,</div>
+<div class="line"><span class="lineno">  458</span>      &amp;<a class="code hl_variable" href="group___free_r_t_o_s___variables.html#ga3e8479e068b85c548eb0740800d068d8">taskMetodo_Handle</a>); </div>
+<div class="line"><span class="lineno">  459</span>}</div>
+<div class="ttc" id="agroup___free_r_t_o_s___variables_html_ga3e8479e068b85c548eb0740800d068d8"><div class="ttname"><a href="group___free_r_t_o_s___variables.html#ga3e8479e068b85c548eb0740800d068d8">taskMetodo_Handle</a></div><div class="ttdeci">TaskHandle_t taskMetodo_Handle</div><div class="ttdoc">Handle da tarefa do método.</div><div class="ttdef"><b>Definição</b> main.h:28</div></div>
+<div class="ttc" id="agroup___other___variables_html_ga8726ef450415d60800487b60088d01a5"><div class="ttname"><a href="group___other___variables.html#ga8726ef450415d60800487b60088d01a5">TaskRunMetodo</a></div><div class="ttdeci">void TaskRunMetodo(void *pvParameters)</div><div class="ttdoc">Tarefa para executar o método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:39</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa1cf1fc3eae02e134f7361885ba346a1" name="aa1cf1fc3eae02e134f7361885ba346a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1cf1fc3eae02e134f7361885ba346a1">&#9670;&#160;</a></span>initLMP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initLMP </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>lmpGain</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa o LMP com o ganho especificado. </p>
+<p>Inicializa o LMP com o pino MENB.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lmpGain</td><td>Ganho do LMP. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>{</div>
+<div class="line"><span class="lineno">  398</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setGain(lmpGain);</div>
+<div class="line"><span class="lineno">  399</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setBias(0);</div>
+<div class="line"><span class="lineno">  400</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a> = lmpGain;</div>
+<div class="line"><span class="lineno">  401</span>}</div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a7b77fa28a2cf0965692ebd9cc4451f8d"><div class="ttname"><a href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a></div><div class="ttdeci">uint8_t LMPgain</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:29</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_ac24b00a74017ea09fc136de7992d1e1d"><div class="ttname"><a href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a></div><div class="ttdeci">LMP91000 pStat</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:20</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5bd6e1e3fa6962643543a353997fc0de" name="a5bd6e1e3fa6962643543a353997fc0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd6e1e3fa6962643543a353997fc0de">&#9670;&#160;</a></span>initLMPapp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initLMPapp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconfig__lmp.html">config_lmp</a>&#160;</td>
+          <td class="paramname"><em>config_lmp_d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">dac_t *&#160;</td>
+          <td class="paramname"><em>dac_copy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa o aplicativo LMP com configurações e ponteiro para DAC. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>Configuração do LMP. </td></tr>
+    <tr><td class="paramname">dac</td><td>Ponteiro para o DAC. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  374</span>{</div>
+<div class="line"><span class="lineno">  375</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#af4dd852b862d118f865971acc6e78aa2">dac_f</a> = *dac_copy;</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.disableFET();</div>
+<div class="line"><span class="lineno">  378</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setGain(config_lmp_d.<a class="code hl_variable" href="structconfig__lmp.html#a7c3df3aac0c59961a99f8f1333490248">lmpGain</a>);</div>
+<div class="line"><span class="lineno">  379</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a> = config_lmp_d.<a class="code hl_variable" href="structconfig__lmp.html#a7c3df3aac0c59961a99f8f1333490248">lmpGain</a>;</div>
+<div class="line"><span class="lineno">  380</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setRLoad(config_lmp_d.<a class="code hl_variable" href="structconfig__lmp.html#aba30a3084636cc4a55c88f1873388bfd">RLoad</a>);</div>
+<div class="line"><span class="lineno">  381</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setExtRefSource();</div>
+<div class="line"><span class="lineno">  382</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setIntZ(config_lmp_d.<a class="code hl_variable" href="structconfig__lmp.html#ae9f9e9930ccfc3ad5da4ce8a8e4f022f">IntZ</a>);</div>
+<div class="line"><span class="lineno">  383</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#a36995a42bcb661cb28d8c9c48d7ff9f4">IntZ</a> = config_lmp_d.<a class="code hl_variable" href="structconfig__lmp.html#ae9f9e9930ccfc3ad5da4ce8a8e4f022f">IntZ</a>;</div>
+<div class="line"><span class="lineno">  384</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setThreeLead();</div>
+<div class="line"><span class="lineno">  385</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setBias(config_lmp_d.<a class="code hl_variable" href="structconfig__lmp.html#aa6ff2ac68d46071824f1509d09542d89">bias_setting</a>);</div>
+<div class="line"><span class="lineno">  386</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setPosBias();</div>
+<div class="line"><span class="lineno">  387</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setBias(0);</div>
+<div class="line"><span class="lineno">  388</span>}</div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a36995a42bcb661cb28d8c9c48d7ff9f4"><div class="ttname"><a href="_l_m_papp_8cpp.html#a36995a42bcb661cb28d8c9c48d7ff9f4">IntZ</a></div><div class="ttdeci">uint8_t IntZ</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:30</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_af4dd852b862d118f865971acc6e78aa2"><div class="ttname"><a href="_l_m_papp_8cpp.html#af4dd852b862d118f865971acc6e78aa2">dac_f</a></div><div class="ttdeci">dac_t dac_f</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:24</div></div>
+<div class="ttc" id="astructconfig__lmp_html_a7c3df3aac0c59961a99f8f1333490248"><div class="ttname"><a href="structconfig__lmp.html#a7c3df3aac0c59961a99f8f1333490248">config_lmp::lmpGain</a></div><div class="ttdeci">uint8_t lmpGain</div><div class="ttdef"><b>Definição</b> LMPapp.h:24</div></div>
+<div class="ttc" id="astructconfig__lmp_html_aa6ff2ac68d46071824f1509d09542d89"><div class="ttname"><a href="structconfig__lmp.html#aa6ff2ac68d46071824f1509d09542d89">config_lmp::bias_setting</a></div><div class="ttdeci">uint8_t bias_setting</div><div class="ttdef"><b>Definição</b> LMPapp.h:27</div></div>
+<div class="ttc" id="astructconfig__lmp_html_aba30a3084636cc4a55c88f1873388bfd"><div class="ttname"><a href="structconfig__lmp.html#aba30a3084636cc4a55c88f1873388bfd">config_lmp::RLoad</a></div><div class="ttdeci">uint8_t RLoad</div><div class="ttdef"><b>Definição</b> LMPapp.h:25</div></div>
+<div class="ttc" id="astructconfig__lmp_html_ae9f9e9930ccfc3ad5da4ce8a8e4f022f"><div class="ttname"><a href="structconfig__lmp.html#ae9f9e9930ccfc3ad5da4ce8a8e4f022f">config_lmp::IntZ</a></div><div class="ttdeci">uint8_t IntZ</div><div class="ttdef"><b>Definição</b> LMPapp.h:26</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aadaf4f965e633869a4efdbefde081a82" name="aadaf4f965e633869a4efdbefde081a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadaf4f965e633869a4efdbefde081a82">&#9670;&#160;</a></span>LMP_isReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean LMP_isReady </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o LMP está pronto. </p>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se o LMP estiver pronto, <code>false</code> caso contrário. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  409</span>{</div>
+<div class="line"><span class="lineno">  410</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.isReady();</div>
+<div class="line"><span class="lineno">  411</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a32d9922b6eff7e32c69eeb9d00a46bfe" name="a32d9922b6eff7e32c69eeb9d00a46bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d9922b6eff7e32c69eeb9d00a46bfe">&#9670;&#160;</a></span>LMP_readVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMP_readVoltage </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>voltage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê a tensão do LMP. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>Tensão lida. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>{</div>
+<div class="line"><span class="lineno">  259</span>  <span class="comment">// tensão de saída do amplificador transimpedância</span></div>
+<div class="line"><span class="lineno">  260</span>  readData(&amp;<a class="code hl_variable" href="_l_m_papp_8cpp.html#a9d680c514847e2de39df2db673eb1655">dataStruct</a>);</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>  <span class="keywordtype">float</span> v1 = 0;</div>
+<div class="line"><span class="lineno">  263</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="_l_m_papp_8cpp.html#a36995a42bcb661cb28d8c9c48d7ff9f4">IntZ</a> == 3)</div>
+<div class="line"><span class="lineno">  264</span>    v1 = (float(<a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a>) / 1000);</div>
+<div class="line"><span class="lineno">  265</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  266</span>    v1 = (float(<a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a>) / 1000) * TIA_ZERO[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a36995a42bcb661cb28d8c9c48d7ff9f4">IntZ</a>];</div>
+<div class="line"><span class="lineno">  267</span>  <span class="keywordtype">float</span> v2 = 2 * <a class="code hl_variable" href="_l_m_papp_8cpp.html#a4363b65a393b0ca493fa20d6c1e244c2">vref</a> * (float(<a class="code hl_variable" href="_l_m_papp_8cpp.html#a9d680c514847e2de39df2db673eb1655">dataStruct</a>.channel2) / (pow(2, 24)));</div>
+<div class="line"><span class="lineno">  268</span>  <span class="keywordtype">float</span> current = 0;</div>
+<div class="line"><span class="lineno">  269</span>  <span class="comment">// a corrente é determinada pelo zero do amplificador transimpedância</span></div>
+<div class="line"><span class="lineno">  270</span>  <span class="comment">// a partir da saída do amplificador transimpedância, e depois dividindo</span></div>
+<div class="line"><span class="lineno">  271</span>  <span class="comment">// pelo resistor de feedback</span></div>
+<div class="line"><span class="lineno">  272</span>  <span class="comment">// corrente = (V_OUT - V_IN) / RFB</span></div>
+<div class="line"><span class="lineno">  273</span>  <span class="comment">// v1 e v2 estão em milivolts</span></div>
+<div class="line"><span class="lineno">  274</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a> == 0)</div>
+<div class="line"><span class="lineno">  275</span>    current = (((v2 - v1) / 1000) / <a class="code hl_variable" href="_l_m_papp_8cpp.html#a39affe33842907582fee290b908633f7">RFB</a>) * pow(10, 9); <span class="comment">// escala para nA</span></div>
+<div class="line"><span class="lineno">  276</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  277</span>    current = (((v2 - v1) / 1000) / TIA_GAIN[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a> - 1]) * pow(10, 9); <span class="comment">// escalado para uA pow(10,6)=uA ou pow(10,9)=nA</span></div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>  <span class="keywordtype">float</span> current2 = ((((v2 - v1)) / (TIA_GAIN[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a7b77fa28a2cf0965692ebd9cc4451f8d">LMPgain</a> - 1])));</div>
+<div class="line"><span class="lineno">  280</span>  </div>
+<div class="line"><span class="lineno">  281</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#adc9f603830255974228c792d1cb47ab8">vout</a> = v2;</div>
+<div class="line"><span class="lineno">  282</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a45668e40d5cce5673b5e3c25d4eab422">c1</a> = v1;</div>
+<div class="line"><span class="lineno">  283</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a874dd4fd5a234c25b098f75bf71376fe">current</a> = current;</div>
+<div class="line"><span class="lineno">  284</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a27fc740d261815e73d35d9a8f6b4073d">current2</a> = current2 * pow(10, 6);</div>
+<div class="line"><span class="lineno">  285</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a65181dfe199329330ef43ea7487ad475">voltage_f</a> = voltage;</div>
+<div class="line"><span class="lineno">  286</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a1ba2bf80a59032af5561df45aa13d119">current_f</a> = current;</div>
+<div class="line"><span class="lineno">  287</span>}</div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a317b005833afe427d3193968d57c29bc"><div class="ttname"><a href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a></div><div class="ttdeci">uint16_t dacVout</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:26</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a39affe33842907582fee290b908633f7"><div class="ttname"><a href="_l_m_papp_8cpp.html#a39affe33842907582fee290b908633f7">RFB</a></div><div class="ttdeci">float RFB</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:32</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a4363b65a393b0ca493fa20d6c1e244c2"><div class="ttname"><a href="_l_m_papp_8cpp.html#a4363b65a393b0ca493fa20d6c1e244c2">vref</a></div><div class="ttdeci">float vref</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:31</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a9d680c514847e2de39df2db673eb1655"><div class="ttname"><a href="_l_m_papp_8cpp.html#a9d680c514847e2de39df2db673eb1655">dataStruct</a></div><div class="ttdeci">adc_data_struct dataStruct</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:21</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_acb0f7f688e832d5ce7b2de6907d4cf5c"><div class="ttname"><a href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a></div><div class="ttdeci">data_print_CV data_CV_f</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:22</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a1ba2bf80a59032af5561df45aa13d119"><div class="ttname"><a href="structdata__print___c_v.html#a1ba2bf80a59032af5561df45aa13d119">data_print_CV::current_f</a></div><div class="ttdeci">float current_f</div><div class="ttdef"><b>Definição</b> LMPapp.h:99</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a27fc740d261815e73d35d9a8f6b4073d"><div class="ttname"><a href="structdata__print___c_v.html#a27fc740d261815e73d35d9a8f6b4073d">data_print_CV::current2</a></div><div class="ttdeci">float current2</div><div class="ttdef"><b>Definição</b> LMPapp.h:96</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a45668e40d5cce5673b5e3c25d4eab422"><div class="ttname"><a href="structdata__print___c_v.html#a45668e40d5cce5673b5e3c25d4eab422">data_print_CV::c1</a></div><div class="ttdeci">float c1</div><div class="ttdef"><b>Definição</b> LMPapp.h:94</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a65181dfe199329330ef43ea7487ad475"><div class="ttname"><a href="structdata__print___c_v.html#a65181dfe199329330ef43ea7487ad475">data_print_CV::voltage_f</a></div><div class="ttdeci">float voltage_f</div><div class="ttdef"><b>Definição</b> LMPapp.h:98</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a874dd4fd5a234c25b098f75bf71376fe"><div class="ttname"><a href="structdata__print___c_v.html#a874dd4fd5a234c25b098f75bf71376fe">data_print_CV::current</a></div><div class="ttdeci">float current</div><div class="ttdef"><b>Definição</b> LMPapp.h:95</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_adc9f603830255974228c792d1cb47ab8"><div class="ttname"><a href="structdata__print___c_v.html#adc9f603830255974228c792d1cb47ab8">data_print_CV::vout</a></div><div class="ttdeci">float vout</div><div class="ttdef"><b>Definição</b> LMPapp.h:93</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2536e3d60035cc7936c74786113f8a46" name="a2536e3d60035cc7936c74786113f8a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2536e3d60035cc7936c74786113f8a46">&#9670;&#160;</a></span>LMP_setVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LMP_setVoltage </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>voltage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a tensão do LMP. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>Tensão desejada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>{</div>
+<div class="line"><span class="lineno">  248</span>  <a class="code hl_function" href="_l_m_papp_8cpp.html#a2bd51c26b394d17c3d62eb64f915a9cc">setLMPBias</a>(voltage);</div>
+<div class="line"><span class="lineno">  249</span>  <a class="code hl_function" href="_l_m_papp_8cpp.html#a43eea38dc24e38149871bc4d7989a981">setVoltage</a>(voltage);</div>
+<div class="line"><span class="lineno">  250</span>}</div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a2bd51c26b394d17c3d62eb64f915a9cc"><div class="ttname"><a href="_l_m_papp_8cpp.html#a2bd51c26b394d17c3d62eb64f915a9cc">setLMPBias</a></div><div class="ttdeci">void setLMPBias(int16_t voltage)</div><div class="ttdoc">Define o bias do LMP.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:354</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a43eea38dc24e38149871bc4d7989a981"><div class="ttname"><a href="_l_m_papp_8cpp.html#a43eea38dc24e38149871bc4d7989a981">setVoltage</a></div><div class="ttdeci">void setVoltage(int16_t voltage)</div><div class="ttdoc">Define a tensão do DAC.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:295</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1c780630713d9e6c1240965140af3131" name="a1c780630713d9e6c1240965140af3131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c780630713d9e6c1240965140af3131">&#9670;&#160;</a></span>pararMetodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pararMetodo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Para a execução do método. </p>
+<p>Para o método. </p>
+<div class="fragment"><div class="line"><span class="lineno">  465</span>{</div>
+<div class="line"><span class="lineno">  466</span>  <span class="comment">// Exclui a tarefa atual</span></div>
+<div class="line"><span class="lineno">  467</span>  vTaskDelete(<a class="code hl_variable" href="group___free_r_t_o_s___variables.html#ga3e8479e068b85c548eb0740800d068d8">taskMetodo_Handle</a>);</div>
+<div class="line"><span class="lineno">  468</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a847c3564f7c67a7f4ace5da91ce6884c" name="a847c3564f7c67a7f4ace5da91ce6884c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847c3564f7c67a7f4ace5da91ce6884c">&#9670;&#160;</a></span>print_data_CV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_data_CV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime os dados de CV. </p>
+<div class="fragment"><div class="line"><span class="lineno">  417</span>{</div>
+<div class="line"><span class="lineno">  418</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a84f09b3275b3907b900daaf2e3174d5d">zero</a>);</div>
+<div class="line"><span class="lineno">  419</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  420</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#ad28e4f4168959947c50547046bac3d61">bias</a>);</div>
+<div class="line"><span class="lineno">  421</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  422</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#adc9f603830255974228c792d1cb47ab8">vout</a>, 10);</div>
+<div class="line"><span class="lineno">  423</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  424</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a45668e40d5cce5673b5e3c25d4eab422">c1</a>, 10);</div>
+<div class="line"><span class="lineno">  425</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  426</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a874dd4fd5a234c25b098f75bf71376fe">current</a>, 10);</div>
+<div class="line"><span class="lineno">  427</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  428</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a144817a90f07db84245abf76522500ea">cycle</a>);</div>
+<div class="line"><span class="lineno">  429</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  430</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a65181dfe199329330ef43ea7487ad475">voltage_f</a>);</div>
+<div class="line"><span class="lineno">  431</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  432</span>  Serial.print(<a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a27fc740d261815e73d35d9a8f6b4073d">current2</a>, 4);</div>
+<div class="line"><span class="lineno">  433</span>  Serial.print(F(<span class="stringliteral">&quot;\t&quot;</span>));</div>
+<div class="line"><span class="lineno">  434</span>  Serial.println();</div>
+<div class="line"><span class="lineno">  435</span>}</div>
+<div class="ttc" id="astructdata__print___c_v_html_a144817a90f07db84245abf76522500ea"><div class="ttname"><a href="structdata__print___c_v.html#a144817a90f07db84245abf76522500ea">data_print_CV::cycle</a></div><div class="ttdeci">uint8_t cycle</div><div class="ttdef"><b>Definição</b> LMPapp.h:97</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_a84f09b3275b3907b900daaf2e3174d5d"><div class="ttname"><a href="structdata__print___c_v.html#a84f09b3275b3907b900daaf2e3174d5d">data_print_CV::zero</a></div><div class="ttdeci">uint16_t zero</div><div class="ttdef"><b>Definição</b> LMPapp.h:91</div></div>
+<div class="ttc" id="astructdata__print___c_v_html_ad28e4f4168959947c50547046bac3d61"><div class="ttname"><a href="structdata__print___c_v.html#ad28e4f4168959947c50547046bac3d61">data_print_CV::bias</a></div><div class="ttdeci">double bias</div><div class="ttdef"><b>Definição</b> LMPapp.h:92</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ade774a3e18020a5960d53571a2a0840b" name="ade774a3e18020a5960d53571a2a0840b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade774a3e18020a5960d53571a2a0840b">&#9670;&#160;</a></span>reiniciarMetodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reiniciarMetodo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reinicia a execução do método. </p>
+<p>Reinicia o método. </p>
+<div class="fragment"><div class="line"><span class="lineno">  474</span>{</div>
+<div class="line"><span class="lineno">  475</span>  <span class="comment">// Para a tarefa atual</span></div>
+<div class="line"><span class="lineno">  476</span>  <a class="code hl_function" href="_l_m_papp_8cpp.html#a1c780630713d9e6c1240965140af3131">pararMetodo</a>();</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>  <span class="comment">// Cria uma nova tarefa</span></div>
+<div class="line"><span class="lineno">  479</span>  <a class="code hl_function" href="_l_m_papp_8cpp.html#a3eb9780523f60eb88e6f1b772bd04b2a">iniciarMetodo</a>();</div>
+<div class="line"><span class="lineno">  480</span>}</div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a1c780630713d9e6c1240965140af3131"><div class="ttname"><a href="_l_m_papp_8cpp.html#a1c780630713d9e6c1240965140af3131">pararMetodo</a></div><div class="ttdeci">void pararMetodo()</div><div class="ttdoc">Para a execução do método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:464</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a3eb9780523f60eb88e6f1b772bd04b2a"><div class="ttname"><a href="_l_m_papp_8cpp.html#a3eb9780523f60eb88e6f1b772bd04b2a">iniciarMetodo</a></div><div class="ttdeci">void iniciarMetodo()</div><div class="ttdoc">Inicia a execução do método.</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:448</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2bd51c26b394d17c3d62eb64f915a9cc" name="a2bd51c26b394d17c3d62eb64f915a9cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd51c26b394d17c3d62eb64f915a9cc">&#9670;&#160;</a></span>setLMPBias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setLMPBias </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>voltage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define o bias do LMP. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>Bias desejado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  355</span>{</div>
+<div class="line"><span class="lineno">  356</span>  <span class="keywordtype">signed</span> <span class="keywordtype">char</span> sign = (float)voltage / abs(voltage);</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>  <span class="keywordflow">if</span> (sign &lt; 0)</div>
+<div class="line"><span class="lineno">  359</span>    <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setNegBias();</div>
+<div class="line"><span class="lineno">  360</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sign &gt; 0)</div>
+<div class="line"><span class="lineno">  361</span>    <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setPosBias();</div>
+<div class="line"><span class="lineno">  362</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  363</span>  {   <span class="comment">// não faz nada</span></div>
+<div class="line"><span class="lineno">  364</span>  } </div>
+<div class="line"><span class="lineno">  365</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4f67553db7df46130c2386194197151d" name="a4f67553db7df46130c2386194197151d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f67553db7df46130c2386194197151d">&#9670;&#160;</a></span>setOutputsToZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setOutputsToZero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define as saídas para zero. </p>
+<div class="fragment"><div class="line"><span class="lineno">  441</span>{</div>
+<div class="line"><span class="lineno">  442</span>  dac_set_vout(&amp;<a class="code hl_variable" href="_l_m_papp_8cpp.html#af4dd852b862d118f865971acc6e78aa2">dac_f</a>, 0);</div>
+<div class="line"><span class="lineno">  443</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a42421a0a7ba2fc595e273e5a9a79cffc" name="a42421a0a7ba2fc595e273e5a9a79cffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42421a0a7ba2fc595e273e5a9a79cffc">&#9670;&#160;</a></span>setupLMP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setupLMP </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>MENB</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa o LMP com o pino MENB. </p>
+<p>Inicializa o LMP com os pinos MENB.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MENB</td><td>Pino MENB (Enable) do LMP. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>{</div>
+<div class="line"><span class="lineno">  237</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setMENB(<a class="code hl_variable" href="group___pin___definitions.html#ga1a7cbb7bf138520c626c17e6c7ffa6b7">MENB</a>);</div>
+<div class="line"><span class="lineno">  238</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.standby();</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+<div class="ttc" id="agroup___pin___definitions_html_ga1a7cbb7bf138520c626c17e6c7ffa6b7"><div class="ttname"><a href="group___pin___definitions.html#ga1a7cbb7bf138520c626c17e6c7ffa6b7">MENB</a></div><div class="ttdeci">const uint8_t MENB</div><div class="ttdoc">MENB.</div><div class="ttdef"><b>Definição</b> main.h:67</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a43eea38dc24e38149871bc4d7989a981" name="a43eea38dc24e38149871bc4d7989a981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43eea38dc24e38149871bc4d7989a981">&#9670;&#160;</a></span>setVoltage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setVoltage </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>voltage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define a tensão do DAC. </p>
+<p>Define a tensão.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">voltage</td><td>Tensão desejada. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>{</div>
+<div class="line"><span class="lineno">  297</span>  <span class="comment">// Tensão DAC mínima que pode ser definida</span></div>
+<div class="line"><span class="lineno">  298</span>  <span class="comment">// O LMP91000 aceita um valor mínimo de 1,5V, adicionando os</span></div>
+<div class="line"><span class="lineno">  299</span>  <span class="comment">// 20 mV adicionais para ter uma margem de segurança</span></div>
+<div class="line"><span class="lineno">  300</span>  <span class="keyword">const</span> uint16_t minDACVoltage = 1520;</div>
+<div class="line"><span class="lineno">  301</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a> = 0;</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span>  <span class="keywordflow">if</span> (voltage == 0)</div>
+<div class="line"><span class="lineno">  304</span>  {</div>
+<div class="line"><span class="lineno">  305</span>    <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> = 1500;</div>
+<div class="line"><span class="lineno">  306</span>  }</div>
+<div class="line"><span class="lineno">  307</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  308</span>  {</div>
+<div class="line"><span class="lineno">  309</span>    <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> = minDACVoltage;</div>
+<div class="line"><span class="lineno">  310</span>    <span class="comment">// a tensão não pode ser ajustada para menos de 15mV, porque o LMP91000</span></div>
+<div class="line"><span class="lineno">  311</span>    <span class="comment">// aceita um mínimo de 1,5V no pino VREF e possui 1% como sua</span></div>
+<div class="line"><span class="lineno">  312</span>    <span class="comment">// menor opção de polarização 1,5V * 1% = 15mV</span></div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">if</span> (abs(voltage) &lt; 15)</div>
+<div class="line"><span class="lineno">  314</span>      voltage = 15 * (voltage / abs(voltage));</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>    int16_t setV = <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> * TIA_BIAS[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a>];</div>
+<div class="line"><span class="lineno">  317</span>    voltage = abs(voltage);</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">while</span> (setV &gt; voltage * (1 + <a class="code hl_variable" href="_l_m_papp_8cpp.html#a3188ac33bdc0a940a3819eb82b320151">v_tolerance</a>) || setV &lt; voltage * (1 - <a class="code hl_variable" href="_l_m_papp_8cpp.html#a3188ac33bdc0a940a3819eb82b320151">v_tolerance</a>))</div>
+<div class="line"><span class="lineno">  320</span>    {</div>
+<div class="line"><span class="lineno">  321</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a> == 0)</div>
+<div class="line"><span class="lineno">  322</span>        <a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a> = 1;</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>      <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> = voltage / TIA_BIAS[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a>];</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> &gt; <a class="code hl_variable" href="_l_m_papp_8cpp.html#abaa11dd3f094b4f66a937036588dc9ae">opVolt</a>)</div>
+<div class="line"><span class="lineno">  327</span>      {</div>
+<div class="line"><span class="lineno">  328</span>        <a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a>++;</div>
+<div class="line"><span class="lineno">  329</span>        <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> = 1500;</div>
+<div class="line"><span class="lineno">  330</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a> &gt; NUM_TIA_BIAS)</div>
+<div class="line"><span class="lineno">  331</span>        {</div>
+<div class="line"><span class="lineno">  332</span>          <a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a> = 0;</div>
+<div class="line"><span class="lineno">  333</span>        }</div>
+<div class="line"><span class="lineno">  334</span>      }</div>
+<div class="line"><span class="lineno">  335</span> </div>
+<div class="line"><span class="lineno">  336</span>      setV = <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a> * TIA_BIAS[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a>];</div>
+<div class="line"><span class="lineno">  337</span>    }</div>
+<div class="line"><span class="lineno">  338</span>  }</div>
+<div class="line"><span class="lineno">  339</span>  xSemaphoreTake(<a class="code hl_variable" href="group___free_r_t_o_s___variables.html#ga7dbb5e081dd5548cc2f5eb94b8dce9da">xSemaphore_writeLMP</a>, portMAX_DELAY);</div>
+<div class="line"><span class="lineno">  340</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#ac24b00a74017ea09fc136de7992d1e1d">pStat</a>.setBias(<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a>);</div>
+<div class="line"><span class="lineno">  341</span>  dac_set_vout(&amp;<a class="code hl_variable" href="_l_m_papp_8cpp.html#af4dd852b862d118f865971acc6e78aa2">dac_f</a>, <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a>);</div>
+<div class="line"><span class="lineno">  342</span>  xSemaphoreGive(<a class="code hl_variable" href="group___free_r_t_o_s___variables.html#ga7dbb5e081dd5548cc2f5eb94b8dce9da">xSemaphore_writeLMP</a>);</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#a84f09b3275b3907b900daaf2e3174d5d">zero</a> = <a class="code hl_variable" href="_l_m_papp_8cpp.html#a317b005833afe427d3193968d57c29bc">dacVout</a>;</div>
+<div class="line"><span class="lineno">  345</span>  <a class="code hl_variable" href="_l_m_papp_8cpp.html#acb0f7f688e832d5ce7b2de6907d4cf5c">data_CV_f</a>.<a class="code hl_variable" href="structdata__print___c_v.html#ad28e4f4168959947c50547046bac3d61">bias</a> = TIA_BIAS[<a class="code hl_variable" href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a>];</div>
+<div class="line"><span class="lineno">  346</span>}</div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a3188ac33bdc0a940a3819eb82b320151"><div class="ttname"><a href="_l_m_papp_8cpp.html#a3188ac33bdc0a940a3819eb82b320151">v_tolerance</a></div><div class="ttdeci">const float v_tolerance</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:27</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_a42c9a97ff77ab6ecd82435b44abbdc9c"><div class="ttname"><a href="_l_m_papp_8cpp.html#a42c9a97ff77ab6ecd82435b44abbdc9c">bias_setting</a></div><div class="ttdeci">uint8_t bias_setting</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:25</div></div>
+<div class="ttc" id="a_l_m_papp_8cpp_html_abaa11dd3f094b4f66a937036588dc9ae"><div class="ttname"><a href="_l_m_papp_8cpp.html#abaa11dd3f094b4f66a937036588dc9ae">opVolt</a></div><div class="ttdeci">const uint16_t opVolt</div><div class="ttdef"><b>Definição</b> LMPapp.cpp:28</div></div>
+<div class="ttc" id="agroup___free_r_t_o_s___variables_html_ga7dbb5e081dd5548cc2f5eb94b8dce9da"><div class="ttname"><a href="group___free_r_t_o_s___variables.html#ga7dbb5e081dd5548cc2f5eb94b8dce9da">xSemaphore_writeLMP</a></div><div class="ttdeci">SemaphoreHandle_t xSemaphore_writeLMP</div><div class="ttdoc">Semáforo para escrita LMP.</div><div class="ttdef"><b>Definição</b> main.h:27</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variáveis</h2>
+<a id="aa774c100e9ca7a6ed1fc65067855e23c" name="aa774c100e9ca7a6ed1fc65067855e23c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa774c100e9ca7a6ed1fc65067855e23c">&#9670;&#160;</a></span>Ampsetup_queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xQueueHandle Ampsetup_queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42c9a97ff77ab6ecd82435b44abbdc9c" name="a42c9a97ff77ab6ecd82435b44abbdc9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c9a97ff77ab6ecd82435b44abbdc9c">&#9670;&#160;</a></span>bias_setting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bias_setting = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0136a65ba28e9920028b29b7165fcee2" name="a0136a65ba28e9920028b29b7165fcee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0136a65ba28e9920028b29b7165fcee2">&#9670;&#160;</a></span>CVsetup_queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xQueueHandle CVsetup_queue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4dd852b862d118f865971acc6e78aa2" name="af4dd852b862d118f865971acc6e78aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4dd852b862d118f865971acc6e78aa2">&#9670;&#160;</a></span>dac_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dac_t dac_f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a317b005833afe427d3193968d57c29bc" name="a317b005833afe427d3193968d57c29bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a317b005833afe427d3193968d57c29bc">&#9670;&#160;</a></span>dacVout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t dacVout = 1500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3aea92183660e1650e6c61178f729542" name="a3aea92183660e1650e6c61178f729542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aea92183660e1650e6c61178f729542">&#9670;&#160;</a></span>data_Amp_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdata__print___amp.html">data_print_Amp</a> data_Amp_f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb0f7f688e832d5ce7b2de6907d4cf5c" name="acb0f7f688e832d5ce7b2de6907d4cf5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb0f7f688e832d5ce7b2de6907d4cf5c">&#9670;&#160;</a></span>data_CV_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdata__print___c_v.html">data_print_CV</a> data_CV_f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d680c514847e2de39df2db673eb1655" name="a9d680c514847e2de39df2db673eb1655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d680c514847e2de39df2db673eb1655">&#9670;&#160;</a></span>dataStruct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">adc_data_struct dataStruct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36995a42bcb661cb28d8c9c48d7ff9f4" name="a36995a42bcb661cb28d8c9c48d7ff9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36995a42bcb661cb28d8c9c48d7ff9f4">&#9670;&#160;</a></span>IntZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t IntZ = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b77fa28a2cf0965692ebd9cc4451f8d" name="a7b77fa28a2cf0965692ebd9cc4451f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b77fa28a2cf0965692ebd9cc4451f8d">&#9670;&#160;</a></span>LMPgain</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t LMPgain = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abaa11dd3f094b4f66a937036588dc9ae" name="abaa11dd3f094b4f66a937036588dc9ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa11dd3f094b4f66a937036588dc9ae">&#9670;&#160;</a></span>opVolt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint16_t opVolt = 4900</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac24b00a74017ea09fc136de7992d1e1d" name="ac24b00a74017ea09fc136de7992d1e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24b00a74017ea09fc136de7992d1e1d">&#9670;&#160;</a></span>pStat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LMP91000 pStat = LMP91000()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39affe33842907582fee290b908633f7" name="a39affe33842907582fee290b908633f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39affe33842907582fee290b908633f7">&#9670;&#160;</a></span>RFB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float RFB = 10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3188ac33bdc0a940a3819eb82b320151" name="a3188ac33bdc0a940a3819eb82b320151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3188ac33bdc0a940a3819eb82b320151">&#9670;&#160;</a></span>v_tolerance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float v_tolerance = 0.008</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4363b65a393b0ca493fa20d6c1e244c2" name="a4363b65a393b0ca493fa20d6c1e244c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4363b65a393b0ca493fa20d6c1e244c2">&#9670;&#160;</a></span>vref</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vref = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

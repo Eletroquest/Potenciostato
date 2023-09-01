@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BLE_Central_Firmware: Referência da Classe MyServerCallbacks</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="CV_icon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">BLE_Central_Firmware<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">ESP32-Para projeto Potenciostato</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros Públicos</a> &#124;
+<a href="class_my_server_callbacks-members.html">Lista de todos os Membros</a>  </div>
+  <div class="headertitle"><div class="title">Referência da Classe MyServerCallbacks</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Classe de retorno de chamada para o servidor BLE.  
+ <a href="class_my_server_callbacks.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_b_l_e__uart___peripheral_8h_source.html">BLE_uart_Peripheral.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de hierarquia da classe MyServerCallbacks:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_my_server_callbacks.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a9a864448a2836d4381e1bdb6785ba415" id="r_a9a864448a2836d4381e1bdb6785ba415"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_server_callbacks.html#a9a864448a2836d4381e1bdb6785ba415">onConnect</a> (BLEServer *pServer)</td></tr>
+<tr class="memdesc:a9a864448a2836d4381e1bdb6785ba415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callbacks de conexão do servidor BLE.  <br /></td></tr>
+<tr class="separator:a9a864448a2836d4381e1bdb6785ba415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f35b6d22a036789bd40bf433f86e0d" id="r_aa0f35b6d22a036789bd40bf433f86e0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_server_callbacks.html#aa0f35b6d22a036789bd40bf433f86e0d">onDisconnect</a> (BLEServer *pServer)</td></tr>
+<tr class="memdesc:aa0f35b6d22a036789bd40bf433f86e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callbacks de desconexão do servidor BLE.  <br /></td></tr>
+<tr class="separator:aa0f35b6d22a036789bd40bf433f86e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe de retorno de chamada para o servidor BLE. </p>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a9a864448a2836d4381e1bdb6785ba415" name="a9a864448a2836d4381e1bdb6785ba415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a864448a2836d4381e1bdb6785ba415">&#9670;&#160;</a></span>onConnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyServerCallbacks::onConnect </td>
+          <td>(</td>
+          <td class="paramtype">BLEServer *&#160;</td>
+          <td class="paramname"><em>pServer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callbacks de conexão do servidor BLE. </p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="_b_l_e__uart___peripheral_8cpp.html#a82ce0016b020197f9b0356800edae57a">deviceConnected</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   76</span>    Serial.println(<span class="stringliteral">&quot;CONECTADO&quot;</span>);</div>
+<div class="line"><span class="lineno">   77</span>}</div>
+<div class="ttc" id="a_b_l_e__uart___peripheral_8cpp_html_a82ce0016b020197f9b0356800edae57a"><div class="ttname"><a href="_b_l_e__uart___peripheral_8cpp.html#a82ce0016b020197f9b0356800edae57a">deviceConnected</a></div><div class="ttdeci">bool deviceConnected</div><div class="ttdoc">Indica se um dispositivo está conectado.</div><div class="ttdef"><b>Definição</b> BLE_uart_Peripheral.cpp:23</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa0f35b6d22a036789bd40bf433f86e0d" name="aa0f35b6d22a036789bd40bf433f86e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f35b6d22a036789bd40bf433f86e0d">&#9670;&#160;</a></span>onDisconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyServerCallbacks::onDisconnect </td>
+          <td>(</td>
+          <td class="paramtype">BLEServer *&#160;</td>
+          <td class="paramname"><em>pServer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callbacks de desconexão do servidor BLE. </p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="_b_l_e__uart___peripheral_8cpp.html#a82ce0016b020197f9b0356800edae57a">deviceConnected</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   85</span>    pServer-&gt;startAdvertising(); <span class="comment">// restart advertising</span></div>
+<div class="line"><span class="lineno">   86</span>    Serial.println(<span class="stringliteral">&quot;DESCONECTADO startAdvertising&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
+<li>D:/Programas/VSCode/PlatformIO/Potenciostato/Potenciostato/include/<a class="el" href="_b_l_e__uart___peripheral_8h_source.html">BLE_uart_Peripheral.h</a></li>
+<li>D:/Programas/VSCode/PlatformIO/Potenciostato/Potenciostato/src/<a class="el" href="_b_l_e__uart___peripheral_8cpp.html">BLE_uart_Peripheral.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

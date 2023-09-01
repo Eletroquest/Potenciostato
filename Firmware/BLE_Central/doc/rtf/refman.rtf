@@ -1,0 +1,879 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\info 
+{\title {\comment BLE_Central_Firmware  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+1.0 \par
+}}BLE_Central_Firmware}
+{\comment Gerado por doxygen 1.9.8.}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt BLE_Central_Firmware}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Vers\'E3o 1.0\par\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Sum\'E1rio\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'CDndice Hier\'E1rquico\par \pard\plain 
+{\tc \v \'CDndice Hier\'E1rquico}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Hierarquia de Classes\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Esta lista de hierarquias est\'E1 parcialmente ordenada (ordem alfab\'E9tica):}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+BLEAdvertisedDeviceCallbacks
+{
+\par
+\pard\plain \s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+MyAdvertisedDeviceCallbacks\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+}\par
+BLEClientCallbacks
+{
+\par
+\pard\plain \s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+MyClientCallback\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAM \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'CDndice dos Componentes\par \pard\plain 
+{\tc \v \'CDndice dos Componentes}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Lista de Classes\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Aqui est\'E3o as classes, estruturas, uni\'F5es e interfaces e suas respectivas descri\'E7\'F5es:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b MyAdvertisedDeviceCallbacks} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para dispositivos BLE anunciados })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b MyClientCallback} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para o cliente BLE })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAM \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'CDndice dos Arquivos\par \pard\plain 
+{\tc \v \'CDndice dos Arquivos}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Lista de Arquivos\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Esta \'E9 a lista de todos os arquivos e suas respectivas descri\'E7\'F5es:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b include/{\b main.h} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Arquivo de cabe\'E7alho para a funcionalidade principal (main.c) })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b src/{\b main.cpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAF \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Classes{\tc \v Classes}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia da Classe MyAdvertisedDeviceCallbacks\par \pard\plain 
+{\tc\tcl2 \v MyAdvertisedDeviceCallbacks}
+{\xe \v MyAdvertisedDeviceCallbacks}
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para dispositivos BLE anunciados. }}\par
+Diagrama de hierarquia da classe MyAdvertisedDeviceCallbacks:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "class_my_advertised_device_callbacks.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Descri\'E7\'E3o detalhada\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para dispositivos BLE anunciados. \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+A documenta\'E7\'E3o para essa classe foi gerada a partir do seguinte arquivo:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+src/{\b main.cpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia da Classe MyClientCallback\par \pard\plain 
+{\tc\tcl2 \v MyClientCallback}
+{\xe \v MyClientCallback}
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para o cliente BLE. }}\par
+Diagrama de hierarquia da classe MyClientCallback:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "class_my_client_callback.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Descri\'E7\'E3o detalhada\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para o cliente BLE. \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+A documenta\'E7\'E3o para essa classe foi gerada a partir do seguinte arquivo:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+src/{\b main.cpp}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Arquivos{\tc \v Arquivos}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo include/main.h\par \pard\plain 
+{\tc\tcl2 \v include/main.h}
+{\xe \v include/main.h}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Arquivo de cabe\'E7alho para a funcionalidade principal (main.c). }}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <Arduino.h>}\par
+{\f2 #include "BLEDevice.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Defini\'E7\'F5es e Macros\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b MAX_STRING_LENGTH}\~ 100\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tamanho m\'E1ximo da string esperada para ser enviada. }{
+}\par
+}\par}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b TaskReadSerial} (void *pvParameters)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para ler comandos que vem da serial. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b TaskWriteSerial} (void *pvParameters)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para escrever em s\'E9rie. }{
+}\par
+}\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Descri\'E7\'E3o detalhada\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Arquivo de cabe\'E7alho para a funcionalidade principal (main.c). \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Defini\'E7\'F5es e macros\par
+\pard\plain 
+{\xe \v MAX_STRING_LENGTH\:main.h}
+{\xe \v main.h\:MAX_STRING_LENGTH}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define MAX_STRING_LENGTH\~ 100}}
+\par
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tamanho m\'E1ximo da string esperada para ser enviada. }}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+{\xe \v TaskReadSerial\:main.h}
+{\xe \v main.h\:TaskReadSerial}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void TaskReadSerial (void *  {\i pvParameters})}}
+\par
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para ler comandos que vem da serial. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pvParameters} \cell }{\cell }
+{\row }
+}
+Tarefa para ler comandos que vem da serial.\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pvParameters} \cell }{Ponteiro para os par\'E2metros da tarefa (n\'E3o utilizado). \cell }
+{\row }
+}
+}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 246 \{\par
+247   String inputString = {\cf22 ""};     {\cf20 // Uma String para armazenar os dados recebidos}\par
+248   {\cf18 bool} stringComplete = {\cf17 false}; {\cf20 // indica se a string est\'E1 completa}\par
+249   {\cf19 for} (;;)\par
+250   \{\par
+251     {\cf19 if} (Serial.available() > 0)\par
+252     \{\par
+253       inputString = Serial.readStringUntil({\cf23 '\\n'});\par
+254       inputString.trim();\par
+255       \par
+256       {\cf19 if}(inputString == {\cf22 "status_BLE"})\{\par
+257         {\cf19 if} (deviceConnected) Serial.println({\cf22 "connect_BLE"});\par
+258         {\cf19 else} Serial.println({\cf22 "disconnect_BLE"});        \par
+259       \}\par
+260       {\cf19 else} {\cf19 if} (deviceConnected)\par
+261       \{\par
+262         pRXCharacteristic->writeValue(inputString.c_str(), inputString.length());\par
+263         {\cf20 // Serial.print("****Central envia: ");}\par
+264         {\cf20 // Serial.println(inputString.c_str());}\par
+265         {\cf20 // Serial.print("Tamanho: ");}\par
+266         {\cf20 // Serial.println(strlen(inputString.c_str()));}\par
+267       \}\par
+268     \}\par
+269     vTaskDelay(500 / portTICK_PERIOD_MS);\par
+270   \}\par
+271 \}\par
+}
+}
+{\xe \v TaskWriteSerial\:main.h}
+{\xe \v main.h\:TaskWriteSerial}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void TaskWriteSerial (void *  {\i pvParameters})}}
+\par
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para escrever em s\'E9rie. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pvParameters} \cell }{\cell }
+{\row }
+}
+Tarefa para escrever em s\'E9rie.\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pvParameters} \cell }{Ponteiro para os par\'E2metros da tarefa (n\'E3o utilizado). \cell }
+{\row }
+}
+}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 216 \{\par
+217   {\cf18 char} output_data[MAX_STRING_LENGTH];\par
+218 \par
+219   {\cf19 for} (;;)\par
+220   \{\par
+221     {\cf20 //* Esta fila \'E9 preenchida pela fun\'E7\'E3o de callback de notifica\'E7\'E3o BLE}\par
+222     {\cf19 if} (xQueueReceive(output_queue, &output_data, 100))\par
+223     \{\par
+224       {\cf19 if} (deviceConnected)\par
+225       \{\par
+226         std::string receivedMessage = output_data;\par
+227         {\cf20 // Serial.print("****Central recebe: ");}\par
+228         Serial.println(receivedMessage.c_str());\par
+229         {\cf20 // Serial.println(receivedMessage.size());}\par
+230       \}\par
+231       {\cf19 else}\par
+232       \{\par
+233         Serial.println({\cf22 "disconnect_BLE"});\par
+234       \}\par
+235     \}\par
+236     {\cf20 // vTaskDelay(500 / portTICK_PERIOD_MS);}\par
+237   \}\par
+238 \}\par
+}
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+main.h\par \pard\plain 
+{\tc\tcl2 \v include/main.h}
+{\xe \v include/main.h}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+Ir para a documenta\'E7\'E3o desse arquivo.\par
+{
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 1 \par
+6 {\cf21 #ifndef MAIN_H}\par
+7 {\cf21 #define MAIN_H}\par
+8 \par
+9 {\cf21 #include <Arduino.h>}\par
+10 {\cf21 #include "BLEDevice.h"}\par
+11 \par
+12 \par
+16 {\cf21 #define MAX_STRING_LENGTH 100}\par
+17 \par
+23 {\cf17 static} BLEUUID serviceUUID({\cf22 "45925276-4809-11ee-be56-0242ac120002"});\par
+24 \par
+28 {\cf17 static} BLEUUID charUUID_RX({\cf22 "45925277-4809-11ee-be56-0242ac120002"});\par
+29 \par
+33 {\cf17 static} BLEUUID charUUID_TX({\cf22 "45925278-4809-11ee-be56-0242ac120002"});\par
+34 \par
+38 {\cf17 static} QueueHandle_t output_queue = NULL;\par
+39 \par
+45 {\cf18 void} TaskReadSerial({\cf18 void} *pvParameters);\par
+46 \par
+52 {\cf18 void} TaskWriteSerial({\cf18 void} *pvParameters);\par
+53 \par
+54 \par
+58 {\cf17 static} BLEAddress *pServerAddress;\par
+59 \par
+63 {\cf17 static} {\cf18 boolean} doConnect = {\cf17 false};\par
+64 \par
+68 {\cf17 static} {\cf18 boolean} deviceConnected = {\cf17 false};\par
+69 \par
+73 {\cf17 static} {\cf18 boolean} doScan = {\cf17 false};\par
+74 \par
+78 {\cf17 static} BLERemoteCharacteristic *pTXCharacteristic;\par
+79 \par
+83 {\cf17 static} BLERemoteCharacteristic *pRXCharacteristic;\par
+84 \par
+85 {\cf21 #endif}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo src/main.cpp\par \pard\plain 
+{\tc\tcl2 \v src/main.cpp}
+{\xe \v src/main.cpp}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <Arduino.h>}\par
+{\f2 #include "BLEDevice.h"}\par
+{\f2 #include "main.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Componentes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MyClientCallback}{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para o cliente BLE. }}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MyAdvertisedDeviceCallbacks}{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Classe de retorno de chamada para dispositivos BLE anunciados. }}\par}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b connectToServer} (BLEAddress pAddress)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Conecta ao servidor BLE com o endere\'E7o especificado. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b setup} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configura\'E7\'E3o do programa. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b TaskWriteSerial} (void *pvParameters)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para lidar com a escrita na porta serial. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b TaskReadSerial} (void *pvParameters)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para ler dados da porta serial e enviar para o dispositivo BLE. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b loop} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Fun\'E7\'E3o principal do loop de execu\'E7\'E3o. }{
+}\par
+}\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+{\xe \v connectToServer\:main.cpp}
+{\xe \v main.cpp\:connectToServer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool connectToServer (BLEAddress  {\i pAddress})}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Conecta ao servidor BLE com o endere\'E7o especificado. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pAddress} \cell }{Endere\'E7o BLE do servidor. \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Retorna\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+true se a conex\'E3o for bem-sucedida, false caso contr\'E1rio. \par
+}}}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 83 \{\par
+84   Serial.print({\cf22 "Establishing a connection to device address: "});\par
+85   Serial.println(pAddress.toString().c_str());\par
+86 \par
+87   BLEClient *pClient = BLEDevice::createClient();\par
+88   Serial.println({\cf22 " - Created client"});\par
+89 \par
+90   pClient->setClientCallbacks({\cf17 new} MyClientCallback());\par
+91 \par
+92   {\cf20 // Connect to the remove BLE Server.}\par
+93   pClient->connect(pAddress);\par
+94   Serial.println({\cf22 " - Connected to server"});\par
+95 \par
+96   uint16_t mtu = 510;\par
+97   pClient->setMTU(mtu);\par
+98 \par
+99   {\cf20 // Obtain a reference to the Nordic UART service on the remote BLE server.}\par
+100   BLERemoteService *pRemoteService = pClient->getService(serviceUUID);\par
+101   {\cf19 if} (pRemoteService == {\cf17 nullptr})\par
+102   \{\par
+103     Serial.print({\cf22 "Failed to find Nordic UART service UUID: "});\par
+104     Serial.println(serviceUUID.toString().c_str());\par
+105     pClient->disconnect();\par
+106     {\cf19 return} {\cf17 false};\par
+107   \}\par
+108   Serial.println({\cf22 " - Remote BLE service reference established"});\par
+109 \par
+110   {\cf20 // Obtain a reference to the TX characteristic of the Nordic UART service on the remote BLE server.}\par
+111   pTXCharacteristic = pRemoteService->getCharacteristic(charUUID_TX);\par
+112   {\cf19 if} (pTXCharacteristic == {\cf17 nullptr})\par
+113   \{\par
+114     Serial.print({\cf22 "Failed to find TX characteristic UUID: "});\par
+115     Serial.println(charUUID_TX.toString().c_str());\par
+116     pClient->disconnect();\par
+117     {\cf19 return} {\cf17 false};\par
+118   \}\par
+119   Serial.println({\cf22 " - Remote BLE TX characteristic reference established"});\par
+120 \par
+121   {\cf20 // Read the value of the TX characteristic.}\par
+122   {\cf19 if} (pTXCharacteristic->canRead())\par
+123   \{\par
+124     std::string value = pTXCharacteristic->readValue();\par
+125     Serial.print({\cf22 "The characteristic value is currently: "});\par
+126     Serial.println(value.c_str());\par
+127   \}\par
+128 \par
+129   pTXCharacteristic->registerForNotify(notifyCallback);\par
+130 \par
+131   {\cf20 // Obtain a reference to the RX characteristic of the Nordic UART service on the remote BLE server.}\par
+132   pRXCharacteristic = pRemoteService->getCharacteristic(charUUID_RX);\par
+133   {\cf19 if} (pRXCharacteristic == {\cf17 nullptr})\par
+134   \{\par
+135     Serial.print({\cf22 "Failed to find our characteristic UUID: "});\par
+136     Serial.println(charUUID_RX.toString().c_str());\par
+137     pClient->disconnect();\par
+138     {\cf19 return} {\cf17 false};\par
+139   \}\par
+140   Serial.println({\cf22 " - Remote BLE RX characteristic reference established"});\par
+141 \par
+142   deviceConnected = {\cf17 true};\par
+143   {\cf19 return} {\cf17 true};\par
+144 \}\par
+}
+}
+{\xe \v loop\:main.cpp}
+{\xe \v main.cpp\:loop}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void loop ()}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Fun\'E7\'E3o principal do loop de execu\'E7\'E3o. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 277 \{\par
+278   {\cf20 // Se a flag "doConnect" for verdadeira, escaneamos e encontramos o servidor BLE desejado.}\par
+279   {\cf20 // Agora nos conectamos a ele. Uma vez conectados, definimos a flag de conex\'E3o como verdadeira.}\par
+280   {\cf19 if} (doConnect == {\cf17 true})\par
+281   \{\par
+282     {\cf19 if} (connectToServer(*pServerAddress))\par
+283     \{\par
+284       Serial.println({\cf22 "We are now connected to the BLE Server."});\par
+285     \}\par
+286     {\cf19 else}\par
+287     \{\par
+288       Serial.println({\cf22 "We have failed to connect to the server; there is nothin more we will do."});\par
+289     \}\par
+290     doConnect = {\cf17 false};\par
+291   \}\par
+292 \par
+293   {\cf19 if} (!deviceConnected)\par
+294   \{\par
+295     BLEDevice::getScan()->start(0);  {\cf20 //faz o scaneamento novamente se o dispositivo estiver desconectado. }\par
+296   \}\par
+297   vTaskDelay(500 / portTICK_PERIOD_MS);\par
+298 \} {\cf20 // Fim do loop}\par
+}
+}
+{\xe \v setup\:main.cpp}
+{\xe \v main.cpp\:setup}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void setup ()}}
+\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configura\'E7\'E3o do programa. }}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 180 \{\par
+181   Serial.begin(115200);\par
+182   Serial.println({\cf22 "Starting Arduino BLE Central Mode (Client) Nordic UART Service"});\par
+183 \par
+184   BLEDevice::init({\cf22 "Pot UART Central"});\par
+185 \par
+186   {\cf20 // Recupera um Scanner e define o retorno de chamada para ser informado quando}\par
+187   {\cf20 // um novo dispositivo \'E9 detectado. Especifica que queremos um scan ativo e inicia}\par
+188   {\cf20 // o scan para rodar por 5 segundos.}\par
+189   BLEScan *pBLEScan = BLEDevice::getScan();\par
+190   pBLEScan->setAdvertisedDeviceCallbacks({\cf17 new} MyAdvertisedDeviceCallbacks());\par
+191   pBLEScan->setInterval(1349);   {\cf20 // Define o intervalo de scan.}\par
+192   pBLEScan->setWindow(449);      {\cf20 // Define a janela de scan ativo}\par
+193   pBLEScan->setActiveScan({\cf17 true}); {\cf20 // Realiza um scan ativo}\par
+194   pBLEScan->start(5, {\cf17 false});\par
+195 \par
+196   output_queue = xQueueCreate(400, {\cf17 sizeof}({\cf18 char}[MAX_STRING_LENGTH]));\par
+197 \par
+198   xTaskCreate(\par
+199       TaskReadSerial, {\cf22 "SerialR"}, 4096 {\cf20 // Tamanho da pilha}\par
+200       ,NULL, 3 {\cf20 // Prioridade}\par
+201       ,NULL); {\cf20 //, 0}\par
+202 \par
+203   xTaskCreatePinnedToCore(\par
+204       TaskWriteSerial, {\cf22 "SerialW"}, 4096 {\cf20 // Tamanho da pilha}\par
+205       ,NULL, 1 {\cf20 // Prioridade}\par
+206       ,NULL, 1); {\cf20 // Core utilizado para task}\par
+207 \par
+208 \}  {\cf20 // Fim da configura\'E7\'E3o.}\par
+}
+}
+{\xe \v TaskReadSerial\:main.cpp}
+{\xe \v main.cpp\:TaskReadSerial}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void TaskReadSerial (void *  {\i pvParameters})}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para ler dados da porta serial e enviar para o dispositivo BLE. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para ler comandos que vem da serial.\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pvParameters} \cell }{Ponteiro para os par\'E2metros da tarefa (n\'E3o utilizado). \cell }
+{\row }
+}
+}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 246 \{\par
+247   String inputString = {\cf22 ""};     {\cf20 // Uma String para armazenar os dados recebidos}\par
+248   {\cf18 bool} stringComplete = {\cf17 false}; {\cf20 // indica se a string est\'E1 completa}\par
+249   {\cf19 for} (;;)\par
+250   \{\par
+251     {\cf19 if} (Serial.available() > 0)\par
+252     \{\par
+253       inputString = Serial.readStringUntil({\cf23 '\\n'});\par
+254       inputString.trim();\par
+255       \par
+256       {\cf19 if}(inputString == {\cf22 "status_BLE"})\{\par
+257         {\cf19 if} (deviceConnected) Serial.println({\cf22 "connect_BLE"});\par
+258         {\cf19 else} Serial.println({\cf22 "disconnect_BLE"});        \par
+259       \}\par
+260       {\cf19 else} {\cf19 if} (deviceConnected)\par
+261       \{\par
+262         pRXCharacteristic->writeValue(inputString.c_str(), inputString.length());\par
+263         {\cf20 // Serial.print("****Central envia: ");}\par
+264         {\cf20 // Serial.println(inputString.c_str());}\par
+265         {\cf20 // Serial.print("Tamanho: ");}\par
+266         {\cf20 // Serial.println(strlen(inputString.c_str()));}\par
+267       \}\par
+268     \}\par
+269     vTaskDelay(500 / portTICK_PERIOD_MS);\par
+270   \}\par
+271 \}\par
+}
+}
+{\xe \v TaskWriteSerial\:main.cpp}
+{\xe \v main.cpp\:TaskWriteSerial}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void TaskWriteSerial (void *  {\i pvParameters})}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para lidar com a escrita na porta serial. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarefa para escrever em s\'E9rie.\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Par\'E2metros\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i pvParameters} \cell }{Ponteiro para os par\'E2metros da tarefa (n\'E3o utilizado). \cell }
+{\row }
+}
+}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 216 \{\par
+217   {\cf18 char} output_data[MAX_STRING_LENGTH];\par
+218 \par
+219   {\cf19 for} (;;)\par
+220   \{\par
+221     {\cf20 //* Esta fila \'E9 preenchida pela fun\'E7\'E3o de callback de notifica\'E7\'E3o BLE}\par
+222     {\cf19 if} (xQueueReceive(output_queue, &output_data, 100))\par
+223     \{\par
+224       {\cf19 if} (deviceConnected)\par
+225       \{\par
+226         std::string receivedMessage = output_data;\par
+227         {\cf20 // Serial.print("****Central recebe: ");}\par
+228         Serial.println(receivedMessage.c_str());\par
+229         {\cf20 // Serial.println(receivedMessage.size());}\par
+230       \}\par
+231       {\cf19 else}\par
+232       \{\par
+233         Serial.println({\cf22 "disconnect_BLE"});\par
+234       \}\par
+235     \}\par
+236     {\cf20 // vTaskDelay(500 / portTICK_PERIOD_MS);}\par
+237   \}\par
+238 \}\par
+}
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Sum\'E1rio\par 
+\pard\plain 
+{\tc \v Sum\'E1rio}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

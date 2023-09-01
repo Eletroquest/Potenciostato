@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BLE_Central_Firmware: Referência do Arquivo src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="CV_icon.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">BLE_Central_Firmware<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">ESP32-Para projeto Potenciostato</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &quot;BLEDevice.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_client_callback.html">MyClientCallback</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe de retorno de chamada para o cliente BLE.  <a href="class_my_client_callback.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_advertised_device_callbacks.html">MyAdvertisedDeviceCallbacks</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe de retorno de chamada para dispositivos BLE anunciados.  <a href="class_my_advertised_device_callbacks.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a9d504a96d9fd8098e8378fdfef91d9fc" id="r_a9d504a96d9fd8098e8378fdfef91d9fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9d504a96d9fd8098e8378fdfef91d9fc">connectToServer</a> (BLEAddress pAddress)</td></tr>
+<tr class="memdesc:a9d504a96d9fd8098e8378fdfef91d9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conecta ao servidor BLE com o endereço especificado.  <br /></td></tr>
+<tr class="separator:a9d504a96d9fd8098e8378fdfef91d9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuração do programa.  <br /></td></tr>
+<tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4384fe2d869bfb62f8d5f0cc466e6a7" id="r_aa4384fe2d869bfb62f8d5f0cc466e6a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa4384fe2d869bfb62f8d5f0cc466e6a7">TaskWriteSerial</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:aa4384fe2d869bfb62f8d5f0cc466e6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarefa para lidar com a escrita na porta serial.  <br /></td></tr>
+<tr class="separator:aa4384fe2d869bfb62f8d5f0cc466e6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d21413cc903febe9fb2b8eab5839d84" id="r_a3d21413cc903febe9fb2b8eab5839d84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3d21413cc903febe9fb2b8eab5839d84">TaskReadSerial</a> (void *pvParameters)</td></tr>
+<tr class="memdesc:a3d21413cc903febe9fb2b8eab5839d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarefa para ler dados da porta serial e enviar para o dispositivo BLE.  <br /></td></tr>
+<tr class="separator:a3d21413cc903febe9fb2b8eab5839d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal do loop de execução.  <br /></td></tr>
+<tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a9d504a96d9fd8098e8378fdfef91d9fc" name="a9d504a96d9fd8098e8378fdfef91d9fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d504a96d9fd8098e8378fdfef91d9fc">&#9670;&#160;</a></span>connectToServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool connectToServer </td>
+          <td>(</td>
+          <td class="paramtype">BLEAddress&#160;</td>
+          <td class="paramname"><em>pAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Conecta ao servidor BLE com o endereço especificado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pAddress</td><td>Endereço BLE do servidor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se a conexão for bem-sucedida, false caso contrário. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>  Serial.print(<span class="stringliteral">&quot;Establishing a connection to device address: &quot;</span>);</div>
+<div class="line"><span class="lineno">   85</span>  Serial.println(pAddress.toString().c_str());</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>  BLEClient *pClient = BLEDevice::createClient();</div>
+<div class="line"><span class="lineno">   88</span>  Serial.println(<span class="stringliteral">&quot; - Created client&quot;</span>);</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>  pClient-&gt;setClientCallbacks(<span class="keyword">new</span> <a class="code hl_class" href="class_my_client_callback.html">MyClientCallback</a>());</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>  <span class="comment">// Connect to the remove BLE Server.</span></div>
+<div class="line"><span class="lineno">   93</span>  pClient-&gt;connect(pAddress);</div>
+<div class="line"><span class="lineno">   94</span>  Serial.println(<span class="stringliteral">&quot; - Connected to server&quot;</span>);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>  uint16_t mtu = 510;</div>
+<div class="line"><span class="lineno">   97</span>  pClient-&gt;setMTU(mtu);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>  <span class="comment">// Obtain a reference to the Nordic UART service on the remote BLE server.</span></div>
+<div class="line"><span class="lineno">  100</span>  BLERemoteService *pRemoteService = pClient-&gt;getService(serviceUUID);</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keywordflow">if</span> (pRemoteService == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  102</span>  {</div>
+<div class="line"><span class="lineno">  103</span>    Serial.print(<span class="stringliteral">&quot;Failed to find Nordic UART service UUID: &quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span>    Serial.println(serviceUUID.toString().c_str());</div>
+<div class="line"><span class="lineno">  105</span>    pClient-&gt;disconnect();</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+<div class="line"><span class="lineno">  108</span>  Serial.println(<span class="stringliteral">&quot; - Remote BLE service reference established&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>  <span class="comment">// Obtain a reference to the TX characteristic of the Nordic UART service on the remote BLE server.</span></div>
+<div class="line"><span class="lineno">  111</span>  pTXCharacteristic = pRemoteService-&gt;getCharacteristic(charUUID_TX);</div>
+<div class="line"><span class="lineno">  112</span>  <span class="keywordflow">if</span> (pTXCharacteristic == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  113</span>  {</div>
+<div class="line"><span class="lineno">  114</span>    Serial.print(<span class="stringliteral">&quot;Failed to find TX characteristic UUID: &quot;</span>);</div>
+<div class="line"><span class="lineno">  115</span>    Serial.println(charUUID_TX.toString().c_str());</div>
+<div class="line"><span class="lineno">  116</span>    pClient-&gt;disconnect();</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  118</span>  }</div>
+<div class="line"><span class="lineno">  119</span>  Serial.println(<span class="stringliteral">&quot; - Remote BLE TX characteristic reference established&quot;</span>);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>  <span class="comment">// Read the value of the TX characteristic.</span></div>
+<div class="line"><span class="lineno">  122</span>  <span class="keywordflow">if</span> (pTXCharacteristic-&gt;canRead())</div>
+<div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>    std::string value = pTXCharacteristic-&gt;readValue();</div>
+<div class="line"><span class="lineno">  125</span>    Serial.print(<span class="stringliteral">&quot;The characteristic value is currently: &quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>    Serial.println(value.c_str());</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>  pTXCharacteristic-&gt;registerForNotify(notifyCallback);</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>  <span class="comment">// Obtain a reference to the RX characteristic of the Nordic UART service on the remote BLE server.</span></div>
+<div class="line"><span class="lineno">  132</span>  pRXCharacteristic = pRemoteService-&gt;getCharacteristic(charUUID_RX);</div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordflow">if</span> (pRXCharacteristic == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    Serial.print(<span class="stringliteral">&quot;Failed to find our characteristic UUID: &quot;</span>);</div>
+<div class="line"><span class="lineno">  136</span>    Serial.println(charUUID_RX.toString().c_str());</div>
+<div class="line"><span class="lineno">  137</span>    pClient-&gt;disconnect();</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  139</span>  }</div>
+<div class="line"><span class="lineno">  140</span>  Serial.println(<span class="stringliteral">&quot; - Remote BLE RX characteristic reference established&quot;</span>);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  deviceConnected = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+<div class="ttc" id="aclass_my_client_callback_html"><div class="ttname"><a href="class_my_client_callback.html">MyClientCallback</a></div><div class="ttdoc">Classe de retorno de chamada para o cliente BLE.</div><div class="ttdef"><b>Definição</b> main.cpp:55</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal do loop de execução. </p>
+<div class="fragment"><div class="line"><span class="lineno">  277</span>{</div>
+<div class="line"><span class="lineno">  278</span>  <span class="comment">// Se a flag &quot;doConnect&quot; for verdadeira, escaneamos e encontramos o servidor BLE desejado.</span></div>
+<div class="line"><span class="lineno">  279</span>  <span class="comment">// Agora nos conectamos a ele. Uma vez conectados, definimos a flag de conexão como verdadeira.</span></div>
+<div class="line"><span class="lineno">  280</span>  <span class="keywordflow">if</span> (doConnect == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  281</span>  {</div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="main_8cpp.html#a9d504a96d9fd8098e8378fdfef91d9fc">connectToServer</a>(*pServerAddress))</div>
+<div class="line"><span class="lineno">  283</span>    {</div>
+<div class="line"><span class="lineno">  284</span>      Serial.println(<span class="stringliteral">&quot;We are now connected to the BLE Server.&quot;</span>);</div>
+<div class="line"><span class="lineno">  285</span>    }</div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  287</span>    {</div>
+<div class="line"><span class="lineno">  288</span>      Serial.println(<span class="stringliteral">&quot;We have failed to connect to the server; there is nothin more we will do.&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span>    }</div>
+<div class="line"><span class="lineno">  290</span>    doConnect = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  291</span>  }</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>  <span class="keywordflow">if</span> (!deviceConnected)</div>
+<div class="line"><span class="lineno">  294</span>  {</div>
+<div class="line"><span class="lineno">  295</span>    BLEDevice::getScan()-&gt;start(0);  <span class="comment">//faz o scaneamento novamente se o dispositivo estiver desconectado. </span></div>
+<div class="line"><span class="lineno">  296</span>  }</div>
+<div class="line"><span class="lineno">  297</span>  vTaskDelay(500 / portTICK_PERIOD_MS);</div>
+<div class="line"><span class="lineno">  298</span>} <span class="comment">// Fim do loop</span></div>
+<div class="ttc" id="amain_8cpp_html_a9d504a96d9fd8098e8378fdfef91d9fc"><div class="ttname"><a href="main_8cpp.html#a9d504a96d9fd8098e8378fdfef91d9fc">connectToServer</a></div><div class="ttdeci">bool connectToServer(BLEAddress pAddress)</div><div class="ttdoc">Conecta ao servidor BLE com o endereço especificado.</div><div class="ttdef"><b>Definição</b> main.cpp:82</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configuração do programa. </p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>{</div>
+<div class="line"><span class="lineno">  181</span>  Serial.begin(115200);</div>
+<div class="line"><span class="lineno">  182</span>  Serial.println(<span class="stringliteral">&quot;Starting Arduino BLE Central Mode (Client) Nordic UART Service&quot;</span>);</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>  BLEDevice::init(<span class="stringliteral">&quot;Pot UART Central&quot;</span>);</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  <span class="comment">// Recupera um Scanner e define o retorno de chamada para ser informado quando</span></div>
+<div class="line"><span class="lineno">  187</span>  <span class="comment">// um novo dispositivo é detectado. Especifica que queremos um scan ativo e inicia</span></div>
+<div class="line"><span class="lineno">  188</span>  <span class="comment">// o scan para rodar por 5 segundos.</span></div>
+<div class="line"><span class="lineno">  189</span>  BLEScan *pBLEScan = BLEDevice::getScan();</div>
+<div class="line"><span class="lineno">  190</span>  pBLEScan-&gt;setAdvertisedDeviceCallbacks(<span class="keyword">new</span> <a class="code hl_class" href="class_my_advertised_device_callbacks.html">MyAdvertisedDeviceCallbacks</a>());</div>
+<div class="line"><span class="lineno">  191</span>  pBLEScan-&gt;setInterval(1349);   <span class="comment">// Define o intervalo de scan.</span></div>
+<div class="line"><span class="lineno">  192</span>  pBLEScan-&gt;setWindow(449);      <span class="comment">// Define a janela de scan ativo</span></div>
+<div class="line"><span class="lineno">  193</span>  pBLEScan-&gt;setActiveScan(<span class="keyword">true</span>); <span class="comment">// Realiza um scan ativo</span></div>
+<div class="line"><span class="lineno">  194</span>  pBLEScan-&gt;start(5, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>  output_queue = xQueueCreate(400, <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>[<a class="code hl_define" href="main_8h.html#a6789ebc0df71a8ef76bfbb4fb5f74aad">MAX_STRING_LENGTH</a>]));</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>  xTaskCreate(</div>
+<div class="line"><span class="lineno">  199</span>      <a class="code hl_function" href="main_8cpp.html#a3d21413cc903febe9fb2b8eab5839d84">TaskReadSerial</a>, <span class="stringliteral">&quot;SerialR&quot;</span>, 4096 <span class="comment">// Tamanho da pilha</span></div>
+<div class="line"><span class="lineno">  200</span>      ,NULL, 3 <span class="comment">// Prioridade</span></div>
+<div class="line"><span class="lineno">  201</span>      ,NULL); <span class="comment">//, 0</span></div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>  xTaskCreatePinnedToCore(</div>
+<div class="line"><span class="lineno">  204</span>      <a class="code hl_function" href="main_8cpp.html#aa4384fe2d869bfb62f8d5f0cc466e6a7">TaskWriteSerial</a>, <span class="stringliteral">&quot;SerialW&quot;</span>, 4096 <span class="comment">// Tamanho da pilha</span></div>
+<div class="line"><span class="lineno">  205</span>      ,NULL, 1 <span class="comment">// Prioridade</span></div>
+<div class="line"><span class="lineno">  206</span>      ,NULL, 1); <span class="comment">// Core utilizado para task</span></div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>}  <span class="comment">// Fim da configuração.</span></div>
+<div class="ttc" id="aclass_my_advertised_device_callbacks_html"><div class="ttname"><a href="class_my_advertised_device_callbacks.html">MyAdvertisedDeviceCallbacks</a></div><div class="ttdoc">Classe de retorno de chamada para dispositivos BLE anunciados.</div><div class="ttdef"><b>Definição</b> main.cpp:151</div></div>
+<div class="ttc" id="amain_8cpp_html_a3d21413cc903febe9fb2b8eab5839d84"><div class="ttname"><a href="main_8cpp.html#a3d21413cc903febe9fb2b8eab5839d84">TaskReadSerial</a></div><div class="ttdeci">void TaskReadSerial(void *pvParameters)</div><div class="ttdoc">Tarefa para ler dados da porta serial e enviar para o dispositivo BLE.</div><div class="ttdef"><b>Definição</b> main.cpp:245</div></div>
+<div class="ttc" id="amain_8cpp_html_aa4384fe2d869bfb62f8d5f0cc466e6a7"><div class="ttname"><a href="main_8cpp.html#aa4384fe2d869bfb62f8d5f0cc466e6a7">TaskWriteSerial</a></div><div class="ttdeci">void TaskWriteSerial(void *pvParameters)</div><div class="ttdoc">Tarefa para lidar com a escrita na porta serial.</div><div class="ttdef"><b>Definição</b> main.cpp:215</div></div>
+<div class="ttc" id="amain_8h_html_a6789ebc0df71a8ef76bfbb4fb5f74aad"><div class="ttname"><a href="main_8h.html#a6789ebc0df71a8ef76bfbb4fb5f74aad">MAX_STRING_LENGTH</a></div><div class="ttdeci">#define MAX_STRING_LENGTH</div><div class="ttdoc">Tamanho máximo da string esperada para ser enviada.</div><div class="ttdef"><b>Definição</b> main.h:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3d21413cc903febe9fb2b8eab5839d84" name="a3d21413cc903febe9fb2b8eab5839d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d21413cc903febe9fb2b8eab5839d84">&#9670;&#160;</a></span>TaskReadSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TaskReadSerial </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pvParameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarefa para ler dados da porta serial e enviar para o dispositivo BLE. </p>
+<p>Tarefa para ler comandos que vem da serial.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameters</td><td>Ponteiro para os parâmetros da tarefa (não utilizado). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>{</div>
+<div class="line"><span class="lineno">  247</span>  String inputString = <span class="stringliteral">&quot;&quot;</span>;     <span class="comment">// Uma String para armazenar os dados recebidos</span></div>
+<div class="line"><span class="lineno">  248</span>  <span class="keywordtype">bool</span> stringComplete = <span class="keyword">false</span>; <span class="comment">// indica se a string está completa</span></div>
+<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">if</span> (Serial.available() &gt; 0)</div>
+<div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>      inputString = Serial.readStringUntil(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  254</span>      inputString.trim();</div>
+<div class="line"><span class="lineno">  255</span>      </div>
+<div class="line"><span class="lineno">  256</span>      <span class="keywordflow">if</span>(inputString == <span class="stringliteral">&quot;status_BLE&quot;</span>){</div>
+<div class="line"><span class="lineno">  257</span>        <span class="keywordflow">if</span> (deviceConnected) Serial.println(<span class="stringliteral">&quot;connect_BLE&quot;</span>);</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">else</span> Serial.println(<span class="stringliteral">&quot;disconnect_BLE&quot;</span>);        </div>
+<div class="line"><span class="lineno">  259</span>      }</div>
+<div class="line"><span class="lineno">  260</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (deviceConnected)</div>
+<div class="line"><span class="lineno">  261</span>      {</div>
+<div class="line"><span class="lineno">  262</span>        pRXCharacteristic-&gt;writeValue(inputString.c_str(), inputString.length());</div>
+<div class="line"><span class="lineno">  263</span>        <span class="comment">// Serial.print(&quot;****Central envia: &quot;);</span></div>
+<div class="line"><span class="lineno">  264</span>        <span class="comment">// Serial.println(inputString.c_str());</span></div>
+<div class="line"><span class="lineno">  265</span>        <span class="comment">// Serial.print(&quot;Tamanho: &quot;);</span></div>
+<div class="line"><span class="lineno">  266</span>        <span class="comment">// Serial.println(strlen(inputString.c_str()));</span></div>
+<div class="line"><span class="lineno">  267</span>      }</div>
+<div class="line"><span class="lineno">  268</span>    }</div>
+<div class="line"><span class="lineno">  269</span>    vTaskDelay(500 / portTICK_PERIOD_MS);</div>
+<div class="line"><span class="lineno">  270</span>  }</div>
+<div class="line"><span class="lineno">  271</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa4384fe2d869bfb62f8d5f0cc466e6a7" name="aa4384fe2d869bfb62f8d5f0cc466e6a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4384fe2d869bfb62f8d5f0cc466e6a7">&#9670;&#160;</a></span>TaskWriteSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TaskWriteSerial </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pvParameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarefa para lidar com a escrita na porta serial. </p>
+<p>Tarefa para escrever em série.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameters</td><td>Ponteiro para os parâmetros da tarefa (não utilizado). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>{</div>
+<div class="line"><span class="lineno">  217</span>  <span class="keywordtype">char</span> output_data[<a class="code hl_define" href="main_8h.html#a6789ebc0df71a8ef76bfbb4fb5f74aad">MAX_STRING_LENGTH</a>];</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>  <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  220</span>  {</div>
+<div class="line"><span class="lineno">  221</span>    <span class="comment">//* Esta fila é preenchida pela função de callback de notificação BLE</span></div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">if</span> (xQueueReceive(output_queue, &amp;output_data, 100))</div>
+<div class="line"><span class="lineno">  223</span>    {</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordflow">if</span> (deviceConnected)</div>
+<div class="line"><span class="lineno">  225</span>      {</div>
+<div class="line"><span class="lineno">  226</span>        std::string receivedMessage = output_data;</div>
+<div class="line"><span class="lineno">  227</span>        <span class="comment">// Serial.print(&quot;****Central recebe: &quot;);</span></div>
+<div class="line"><span class="lineno">  228</span>        Serial.println(receivedMessage.c_str());</div>
+<div class="line"><span class="lineno">  229</span>        <span class="comment">// Serial.println(receivedMessage.size());</span></div>
+<div class="line"><span class="lineno">  230</span>      }</div>
+<div class="line"><span class="lineno">  231</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  232</span>      {</div>
+<div class="line"><span class="lineno">  233</span>        Serial.println(<span class="stringliteral">&quot;disconnect_BLE&quot;</span>);</div>
+<div class="line"><span class="lineno">  234</span>      }</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span>    <span class="comment">// vTaskDelay(500 / portTICK_PERIOD_MS);</span></div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="line"><span class="lineno">  238</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
