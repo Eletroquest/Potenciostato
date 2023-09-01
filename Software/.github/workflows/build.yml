@@ -1,0 +1,49 @@
+name: Build Deployment Installer
+
+env:
+  INNO_VERSION: 6.2.1
+
+on: [push, release]
+
+jobs:
+  build:
+    name: Generate Application Installer
+    runs-on: windows-2019
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+        shell: cmd
+
+      - name: PyInstaller Build
+        run: pyinstaller main.spec
+        shell: cmd
+      
+      - name: List Build Output
+        run: |
+          dir ".\dist\main"
+          dir .
+        shell: cmd
+
+      - name: Download Inno Setup
+        run: curl -L -o installer.exe http://files.jrsoftware.org/is/6/innosetup-${{ env.INNO_VERSION }}.exe
+
+      - name: Install Inno Setup
+        run: ./installer.exe /verysilent /allusers /dir=inst
+
+      - name: Build Application Installer
+        run: |
+          "%programfiles(x86)%\Inno Setup 6\iscc.exe" ".\dist\deploy.iss"
+        shell: cmd
+
+      - name: Upload Installer
+        uses: actions/upload-artifact@v2
+        with:
+          name: Installer
+          path: dist/Output/potentiostat_control_setup*.exe

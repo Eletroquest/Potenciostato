@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/logos">
+        <file>resources/logos/logos-fapesp.png</file>
+        <file>resources/logos/logotipo_fb.jpg</file>
+        <file>resources/logos/poli-usp.png</file>
+    </qresource>
+</RCC>

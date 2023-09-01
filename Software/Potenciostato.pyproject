@@ -1,0 +1,10 @@
+{
+    "files": ["mainwindow.py",
+        "requiremets.txt",
+        "forms/MainWindows.ui",
+        "methods/__init__.py",
+        "methods/cyclic_voltammetry.py",
+        "methods/amperometry.py",
+        "methods/toggleswitch.py"
+    ]
+}
