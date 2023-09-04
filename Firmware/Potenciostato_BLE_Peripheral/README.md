@@ -5,28 +5,34 @@ Projeto Potenciostato - um instrumento capaz de aplicar um potencial e medir a c
 
 ## 💻 Referência
 Firmware: 
--[**KickStat: A Coin-Sized Potentiostat for High-Resolution Electrochemical Analysis**](https://github.com/LinnesLab/KickStat-Paper-Firmware) 
--Lib DAC [**DAC 9 click**](https://libstock.mikroe.com/projects/view/3877/dac-9-click)
--Lib ADC [** ADS131A02  **](https://www.ti.com/product/ADS131A02) / [**ADS131A04**](https://www.ti.com/product/ADS131A04)
- 
+- [**KickStat: A Coin-Sized Potentiostat for High-Resolution Electrochemical Analysis**](https://github.com/LinnesLab/KickStat-Paper-Firmware) 
 
 ## 💻 Ambiente de desenvolvimento
+O desenvolvimento deste projeto é realizado no ambiente VSCode, fazendo uso da extensão [PlatformIO](https://platformio.org/).
+O PlatformIO é uma plataforma que facilita o desenvolvimento de sistemas embarcados.
 
-O projeto está sendo desenvolvido no ambiente VSCode com a extensão [PlatformIO](https://platformio.org/) que é uma plataforma para desenvolvimento de embarcado. 
 
 ## 💻 Configurações do ambiente (VSCode)
 
 ### 📥Versão VSCode
 
-Visual Studio Code - **V1.66.2**
+A versão usada do Visual Studio Code foi a V1.66.2. Você pode obtê-la em https://code.visualstudio.com/.
 
-- [https://code.visualstudio.com/](https://code.visualstudio.com/)
+### 📥 Instalação do PlatformIO
 
-### 📥 Obter PlatformIO
-
-PlatformIO IDE - **v2.4.3**
+PlatformIO IDE - **v3.3.1**
 -Após baixar o VSCode no lado esquerdo em  **Extensões** pesquise **PlatformIO IDE** e baixe a IDE
 ![Logo web](screenshots/platformio.png)
+
+### ⚙️ Configurando o Suporte da Espressif no PlatformIO
+
+Para desenvolver para o ESP32, você precisa configurar o suporte da Espressif no PlatformIO. Siga os passos abaixo para fazer isso:
+
+- Abra o PlatformIO no VSCode.
+- Clique em "Home" na barra lateral esquerda.
+- Na seção "Quick Access", clique em "Platforms".
+- Pesquise por "Espressif 32" e clique em "Install".
+- Após a instalação, você estará pronto para desenvolver para o ESP32.
 
 
 ### ▶️ Executar arquivo do projeto
@@ -35,4 +41,6 @@ Para abrir o projeto basta abrir **PlatformIO:Home** ir em  **Open Project** e a
 
 
 ## 📂 Organização do Firmware
-O firmware está sendo desonvolvido com Arduino onde é possivel na IDE 
+O firmware está sendo desenvolvido com a plataforma Arduino, o que facilita a programação e a organização do código. A IDE Arduino é capaz de lidar com o código do firmware de forma intuitiva e eficaz.
+
+Esteja à vontade para explorar e contribuir para o desenvolvimento deste emocionante projeto de Potenciostato! Se você tem alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato com a equipe de desenvolvimento. Juntos, podemos fazer grandes avanços na eletroquímica.
