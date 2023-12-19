@@ -13,7 +13,6 @@ class Amperometry(QObject):
         self.t2 = t2
         self.samples = samples
         self.ranges = ranges
-        self.set_to_zero = set_to_zero
 
     def get_lmp_gain(self):
         return self.lmp_gain
@@ -86,14 +85,6 @@ class Amperometry(QObject):
     def set_ranges(self, value):
         self.ranges = (value+1)*3
         print(f"Set Range to: {self.ranges}")
-
-    def get_set_to_zero(self):
-        return self.set_to_zero
-
-    @Slot(int)
-    def set_set_to_zero(self, value):
-        print(f"Set set_to_zero to: {value}, {bool(value)}")
-        self.set_to_zero = bool(value)
 
 
 #    def verifyData(self):

@@ -1,7 +1,7 @@
 from PySide2.QtCore import QObject, Slot
 
 class CyclicVoltammetry(QObject):
-    def __init__(self, lmp_gain=1, cycles=0, start_voltage=0, end_voltage=0, vertex_1=0, vertex_2=0, step_voltage=1, scan_rate=1, set_to_zero=False):
+    def __init__(self, lmp_gain=1, cycles=0, start_voltage=0, end_voltage=0, vertex_1=0, vertex_2=0, step_voltage=1, scan_rate=1):
         self.lmp_gain = lmp_gain
         self.cycles = cycles
         self.start_voltage = start_voltage
@@ -10,7 +10,6 @@ class CyclicVoltammetry(QObject):
         self.vertex_2 = vertex_2
         self.step_voltage = step_voltage
         self.scan_rate = scan_rate
-        self.set_to_zero = set_to_zero
 
     def get_lmp_gain(self):
         return self.lmp_gain
@@ -75,15 +74,6 @@ class CyclicVoltammetry(QObject):
     def set_scan_rate(self, value):
         print(f"Set scan_rate to: {value}")
         self.scan_rate = value
-
-    def get_set_to_zero(self):
-        return self.set_to_zero
-    
-    @Slot(int)
-    def set_set_to_zero(self, value):
-        print(f"Set set_to_zero to: {value}, {bool(value)}")
-        self.set_to_zero = bool(value)
-
 
     def verifyData(self):
         if self.get_lmp_gain() <  0 or self.get_lmp_gain() >  7:

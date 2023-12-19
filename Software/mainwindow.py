@@ -2,14 +2,15 @@
 import os
 from pathlib import Path
 import sys
+import PySide2
 
 # Importa classes e módulos do PySide2 para criar a interface gráfica
 from PySide2.QtWidgets import QApplication, QWidget, QFileDialog, QMainWindow, QLabel, QGridLayout, QMessageBox
-from PySide2.QtCore import QFile, Slot, QTimer, QDateTime, QCoreApplication, QTime, Qt, QState, QObject, QThread, Signal
+from PySide2.QtCore import QFile, Slot, QTimer, QDateTime, QCoreApplication, QTime, Qt, QState, QObject, QThread, Signal, QDir
 from PySide2.QtCore import Signal as pyqtSignal, Slot as pyqtSlot
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtSerialPort import QSerialPort, QSerialPortInfo
-from PySide2.QtGui import QFontDatabase, QColor, QPen, QBrush, QPixmap, QIcon
+from PySide2.QtGui import QFontDatabase, QColor, QPen, QBrush, QPixmap, QIcon, QMouseEvent
 from qcustomplot_pyside2 import *  # Importa módulo personalizado
 from methods import *  # Importa métodos personalizados
 
@@ -45,56 +46,18 @@ class MainWindow(QMainWindow):
         """
         super(MainWindow, self).__init__()
 
-        # Carrega a interface gráfica definida em um arquivo .ui
+        print(PySide2.__version__)
         self.load_ui()
-
-        # Configuração inicial do gráfico
-        self.setup_chart()
-
-        # Limpa a barra de menus e o widget de texto
-        self.ui.menubar.clear()
-        self.ui.textEdit.clear()
-
-        self.dado = 0
-
-        # Instância de métodos para CyclicVoltammetry e Amperometry
-        self.cyclic_voltammetry = CyclicVoltammetry()
-        self.connect_inicialCV()
-        self.amperometry = Amperometry()
-        self.connect_inicialAmp()
+        self.setupChart()
+        self.inicializaVariaveisMetodos()
         self.connect_ui_signals()
-
-        self.is_serial_port_connected = False
-        self.connected_serial_port = QSerialPort()
-        self.connected_serial_port.setBaudRate(QSerialPort.Baud115200)
-        self.connected_serial_port.setDataBits(QSerialPort.Data8)
-        self.connected_serial_port.setParity(QSerialPort.NoParity)
-        self.connected_serial_port.setStopBits(QSerialPort.OneStop)
-        self.available_serial_ports = []
-
-        # Inicia a verificação das portas seriais disponíveis
-        self.scan_serial_ports()
-        self.serial_port_scan_timer = QTimer()
-        self.serial_port_scan_timer.timeout.connect(self.scan_serial_ports)
-        self.serial_port_scan_timer.start(1000)
-
-        # Conecta o slot para ler dados da porta serial quando dados estão prontos
-        self.connected_serial_port.readyRead.connect(self.read_serial_port_data)
-
-        # Configura botões iniciais
-        self.ui.startButton.setEnabled(False)
-        self.ui.stopButton.setEnabled(False)
+        self.inicializaSerialControl()
+        self.configuraBotaoInicial()
 
         self.csv_file = None
-        self.csv_file_name = ""
+        self.csv_file_name = QDir.currentPath() + "/solucao1.txt"
         self.ui.outputFileName.setText(self.csv_file_name)
-        self.ui.statusbar.showMessage("Configurando Voltametria ...")
-
-        self.ui.textEdit.setReadOnly(True)
-
-        # Controle de estados do método
-        self.currentMedoto = self.ui.toolBox_metodo.currentIndex()
-        self.runnig_metodo = False
+        self.ui.statusbar.showMessage("Configuring Measurement ...")
 
         # Configuração do estado BLE
         self.status_BLE = mode_BLE.BLE_DISABLE
@@ -106,8 +69,51 @@ class MainWindow(QMainWindow):
         self.timer = QTimer()
         self.timer.timeout.connect(self.plot_chart)
 
-        self.pen_chart = QPen()
+        self.ui.actionImport.triggered.connect(self.importData)
 
+    def importData(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+
+        file_name, _ = QFileDialog.getOpenFileName(self, "Abrir Arquivo", "", "Arquivos de Texto (*.txt);;Todos os Arquivos (*)", options=options)
+
+        if file_name:
+            with open(file_name, 'r') as file:
+                header = file.readline().strip()
+
+            if "Voltage(mV);Time(ms);Current" in header:
+                print("Processar o primeiro tipo de arquivo - AMPEROMETRIA")
+                self.plotaGrafico(file_name)
+                self.setLabelCustomPlotAmp()
+            elif "Cycle;Voltage;Current" in header:
+                print("# Processar o segundo tipo de arquivo - VOLTAMETRIA CICLICA")
+                self.plotaGrafico(file_name)
+                self.setLabelCustomPlotCV()
+            else:
+                print("Formato de arquivo não suportado.")
+
+    def plotaGrafico(self, file_name):
+        with open(file_name, 'r') as file:
+            next(file)  # Pular a linha de cabeçalho
+            data = [line.strip().split(';') for line in file]
+            # Extrair a primeira e última coluna
+            result = [(float(row[1]), float(row[-1])) for row in data]
+
+            hour = [row[-1] for row in result]
+            temperature = [row[0] for row in result]
+
+#            self.custom_plot.addGraph()
+#            self.curve2 = QCPCurve(self.custom_plot.xAxis, self.custom_plot.yAxis)
+
+#            self.custom_plot.clearPlottables()
+
+            self.curve2.setData(temperature, hour)
+
+            # Replota o gráfico
+            self.custom_plot.replot()
+
+#            self.custom_plot.xAxis.rescale()
+#            self.custom_plot.yAxis.rescale()
 
     def scan_serial_ports(self):
         """
@@ -263,6 +269,7 @@ class MainWindow(QMainWindow):
                             self.write_file(linha_decoded)
                         elif linha_decoded == 'end_CV':
                             self.close_file()
+                            self.ui.statusbar.showMessage("Configuring Measurement ...")
                         else:
                             linha_decoded_f = linha_decoded.split(";")
                             if len(linha_decoded_f) >= 2:
@@ -277,6 +284,7 @@ class MainWindow(QMainWindow):
                             self.write_file(linha_decoded)
                         elif linha_decoded == 'end_Amp':
                             self.close_file()
+                            self.ui.statusbar.showMessage("Configuring Measurement ...")
                         else:
                             linha_decoded_f = linha_decoded.split(";")
                             if len(linha_decoded_f) >= 2:
@@ -302,11 +310,20 @@ class MainWindow(QMainWindow):
         """
         self.custom_plot.clearPlottables()
         self.custom_plot.removePlottable(0)
-        if self.runnig_metodo:
-            self.curve = QCPCurve(self.custom_plot.xAxis, self.custom_plot.yAxis)
-            self.curve.setPen(self.pen_chart)
+#        if self.runnig_metodo:
+        self.criaCurvas()
         self.custom_plot.replot()
 
+    def criaCurvas(self):
+        self.custom_plot.addGraph()
+        self.curve = QCPCurve(self.custom_plot.xAxis, self.custom_plot.yAxis)
+        self.curve.setPen(self.penCurrentChart)
+
+        self.custom_plot.addGraph()
+        self.curve2 = QCPCurve(self.custom_plot.xAxis, self.custom_plot.yAxis)
+        pen_chartCurve2 = self.penVerde
+        pen_chartCurve2.setWidth(4)
+        self.curve2.setPen(pen_chartCurve2)
 
     @Slot()
     def page_changed(self, index):
@@ -325,15 +342,53 @@ class MainWindow(QMainWindow):
         self.currentMedoto = index
         if index == 0:
             print("CVolt:", index)
-            self.custom_plot.xAxis.setLabel("Voltage (mV)")
-            self.custom_plot.yAxis.setLabel("Current (uA)")
+            self.setLabelCustomPlotCV()            
+            self.penCurrentChart = self.penCiano
+            self.penCurrentChart.setWidth(4)
+            self.ui.toolBox_metodo.setStyleSheet("""
+            QToolBox::tab {
+                color: white;
+                border-radius: 10px;
+                padding: 0 8px;
+                background-color: rgb(51, 56, 70);
+            }
+
+            QToolBox::tab:selected {
+                font: bold;
+                color: rgb(32, 33, 40);
+                background-color: rgb(0, 255, 255);
+            }
+        """)
         else:
             print("Amper:", index)
-            self.custom_plot.xAxis.setLabel("Time (mSec)")
-            self.custom_plot.yAxis.setLabel("Current (uA)")
+            self.setLabelCustomPlotAmp()
+            self.penCurrentChart = self.penAmarelo
+            self.penCurrentChart.setWidth(4)
+            self.ui.toolBox_metodo.setStyleSheet("""
+            QToolBox::tab {
+                color: white;
+                border-radius: 10px;
+                padding: 0 8px;
+                background-color: rgb(51, 56, 70);
+            }
 
+            QToolBox::tab:selected {
+                font: bold;
+                color: rgb(32, 33, 40);
+                background-color: rgb(255, 255, 153);
+            }
+        """)
+
+
+    def setLabelCustomPlotCV(self):
+        self.custom_plot.xAxis.setLabel("Voltage (mV)")
+        self.custom_plot.yAxis.setLabel("Current (uA)")
         self.custom_plot.replot()
 
+    def setLabelCustomPlotAmp(self):
+        self.custom_plot.xAxis.setLabel("Time (mSec)")
+        self.custom_plot.yAxis.setLabel("Current (uA)")
+        self.custom_plot.replot()
 
     @Slot()
     def on_start_button_clicked(self, checked):
@@ -350,8 +405,6 @@ class MainWindow(QMainWindow):
         :return: Nenhum retorno.
         """
         self.on_clear_button_clicked()
-        # Adiciona uma curva ao gráfico
-        self.curve = QCPCurve(self.custom_plot.xAxis, self.custom_plot.yAxis)
 
         print("Start button clicked -> ", checked)  # Pode tirar o check?
         inicia_medida = True
@@ -363,8 +416,8 @@ class MainWindow(QMainWindow):
                 # Exibir QMessageBox para confirmar continuação
                 resposta = QMessageBox.question(
                     None,
-                    "Arquivo Existente",
-                    "O arquivo já existe. Deseja continuar mesmo assim?",
+                    "Existing File",
+                    "The file already exists. Do you want to proceed anyway?",
                     QMessageBox.Yes | QMessageBox.No
                 )
                 if resposta == QMessageBox.Yes:
@@ -376,7 +429,7 @@ class MainWindow(QMainWindow):
             else:
                 # Código a ser executado se existir um diretório com o mesmo nome
                 QMessageBox.about(self, "Start Button", "Could not start, folder output file does not exist")
-        elif not (self.csv_file_name.endswith('.csv') or self.csv_file_name.endswith('.txt')):
+        if not (self.csv_file_name.endswith('.csv') or self.csv_file_name.endswith('.txt')):
             # Arquivo não existe
             inicia_medida = False
             QMessageBox.about(self, "Start Button", "Could not start, output file does not exist")
@@ -413,6 +466,7 @@ class MainWindow(QMainWindow):
         self.timer.deleteLater()
         QCoreApplication.removePostedEvents(self.timer)
         self.ui.stopButton.setEnabled(False)
+        self.ui.statusbar.showMessage("Configuring Measurement ...")
 
 
     @Slot()
@@ -425,7 +479,7 @@ class MainWindow(QMainWindow):
 
         :return: Nenhum retorno.
         """
-        file_name, _ = QFileDialog.getSaveFileName(self, "Salvar arquivo", "", "Arquivo TXT (*.txt);;Arquivo CSV (*.csv)")
+        file_name, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Text File (*.txt);;CSV File (*.csv)")
         if file_name:
             self.csv_file_name = file_name
             self.ui.outputFileName.setText(file_name)
@@ -442,58 +496,31 @@ class MainWindow(QMainWindow):
         """
         send_metodo = " "
         set_to_zero = "0"
+
+        if self.get_set_to_zero():
+            set_to_zero = "0"
+        else:
+            set_to_zero = "1"
+
+        self.custom_plot.yAxis.setRange(200, -200)
         if self.currentMedoto == 0:
             # Configuração para Voltametria Cíclica (CV)
-            if self.cyclic_voltammetry.get_set_to_zero():
-                set_to_zero = "0"
-            else:
-                set_to_zero = "1"
-
             send_metodo = "0;" + str(self.cyclic_voltammetry.get_lmp_gain()) + ";" + str(self.cyclic_voltammetry.get_cycles()) + ";" + str(self.cyclic_voltammetry.get_start_voltage())
             send_metodo = send_metodo + ";" + str(self.cyclic_voltammetry.get_end_voltage()) + ";" + str(self.cyclic_voltammetry.get_vertex_1()) + ";" + str(self.cyclic_voltammetry.get_vertex_2())
-            send_metodo = send_metodo + ";" + str(self.cyclic_voltammetry.get_step_voltage()) + ";" + str(self.cyclic_voltammetry.get_scan_rate()) + ";" + set_to_zero
+            send_metodo = send_metodo + ";" + str(self.cyclic_voltammetry.get_step_voltage()) + ";" + str(self.cyclic_voltammetry.get_scan_rate()) + ";" + set_to_zero +  ";" + str(self.get_holdTime())
 
             self.connected_serial_port.write(send_metodo.encode())
-            self.ui.statusbar.showMessage("Executando Voltametria Ciclica ...")
-            self.pen_chart = QPen(QColor(80, 80, 255))
-            self.pen_chart.setWidth(4)
-            self.curve.setPen(self.pen_chart)
+            self.ui.statusbar.showMessage("Running Cyclic Voltammetry ...")
             self.custom_plot.xAxis.setRange(float(self.cyclic_voltammetry.get_vertex_1())*1.2, float(self.cyclic_voltammetry.get_vertex_2())*1.2)
         else:
             # Configuração para Amperometria (Amp)
-            if self.amperometry.get_set_to_zero():
-                set_to_zero = "0"
-            else:
-                set_to_zero = "1"
-
             send_metodo = "1;" + str(self.amperometry.get_lmp_gain()) + ";" + str(self.amperometry.get_pre_stepV()) + ";" + str(self.amperometry.get_quietTime())
             send_metodo = send_metodo + ";" + str(self.amperometry.get_v1()) + ";" + str(self.amperometry.get_t1()) + ";" + str(self.amperometry.get_v2())
             send_metodo = send_metodo + ";" + str(self.amperometry.get_t2()) + ";" + str(self.amperometry.get_samples()) + ";"
-            send_metodo = send_metodo + str(self.amperometry.get_ranges()) + ";" + set_to_zero
+            send_metodo = send_metodo + str(self.amperometry.get_ranges()) + ";" + set_to_zero +  ";" + str(self.get_holdTime())
 
             self.connected_serial_port.write(send_metodo.encode())
-            self.ui.statusbar.showMessage("Executando Amperometria ...")
-            self.pen_chart = QPen(QColor(40, 40, 255))
-            self.pen_chart.setWidth(4)
-            self.curve.setPen(self.pen_chart)
-
-
-    def update_plot_chart(self, x_data, y_data):
-        """
-        Atualiza o gráfico com novos dados.
-
-        Esta função adiciona novos pontos de dados (x_data, y_data) ao gráfico, atualiza os eixos conforme necessário e
-        solicita a atualização do gráfico.
-
-        :param x_data: Dados para o eixo X do gráfico.
-        :param y_data: Dados para o eixo Y do gráfico.
-        :return: Nenhum retorno.
-        """
-        self.curve.addData(x_data, y_data)
-        self.custom_plot.yAxis.rescale()
-        if self.currentMedoto != 0:
-            self.custom_plot.xAxis.rescale()
-        self.custom_plot.replot()
+            self.ui.statusbar.showMessage("Running Amperometry ...")
 
     def plot_chart(self):
         """
@@ -511,9 +538,10 @@ class MainWindow(QMainWindow):
         if list_decoded_data:
             ultimo_dado = list_decoded_data.pop(0)
             self.curve.addData(ultimo_dado[0], ultimo_dado[1])
-            self.custom_plot.yAxis.rescale()
-            if self.currentMedoto != 0:
-                self.custom_plot.xAxis.rescale()
+            if self.ui.checkBox_AutoScale.isChecked() == True:
+                self.custom_plot.yAxis.rescale()
+                if self.currentMedoto != 0:
+                    self.custom_plot.xAxis.rescale()
             self.custom_plot.replot()
         elif self.runnig_metodo == False:
             self.enabled_buttons()
@@ -567,6 +595,27 @@ class MainWindow(QMainWindow):
         self.ui.clearButton.clicked.connect(self.on_clear_button_clicked)
         self.ui.browseButton.clicked.connect(self.on_browse_button_clicked)
         self.ui.stopButton.clicked.connect(self.on_stop_button_clicked)
+        self.ui.pushButton_PrintGraph.clicked.connect(self.exportGraph)
+        self.ui.pushButton_Rescale.clicked.connect(self.handleRescale)
+
+
+    def exportGraph(self):
+        # Abre o diálogo de seleção de arquivo
+        file_dialog = QFileDialog(self)
+        file_dialog.setAcceptMode(QFileDialog.AcceptSave)
+        file_dialog.setNameFilter("Imagens PNG (*.png)")
+        file_dialog.setDefaultSuffix("png")
+
+        if file_dialog.exec_() == QFileDialog.Accepted:
+            # Obtém o caminho do arquivo selecionado pelo usuário
+            file_path = file_dialog.selectedFiles()[0]
+
+            # Obtém a imagem do gráfico
+            pixmap = self.custom_plot.toPixmap()
+
+            # Salva a imagem como um arquivo PNG
+            pixmap.save(file_path, 'PNG')
+            print(f"Gráfico exportado como {file_path}")
 
     def calc_delayTime(self):
         """
@@ -578,73 +627,6 @@ class MainWindow(QMainWindow):
         :return: No return value.
         """
         self.ui.CV_delayTimeValue.setText(f" {int((1000.0 * self.ui.CV_stepVoltageValue.value())/self.ui.CV_scanRateValue.value())}")
-
-    def connect_inicialCV(self):
-        """
-        Connects initial configuration settings for Cyclic Voltammetry (CV).
-
-        This function connects various UI elements to corresponding setters in the CyclicVoltammetry object
-        and initializes the initial CV settings based on the values in the UI.
-
-        :return: No return value.
-        """
-        # Connect UI elements to CV setters
-        self.ui.CV_lmpGainValue.currentTextChanged.connect(self.cyclic_voltammetry.set_lmp_gain)
-        self.ui.CV_cyclesValue.valueChanged.connect(self.cyclic_voltammetry.set_cycles)
-        self.ui.CV_startVoltageValue.valueChanged.connect(self.cyclic_voltammetry.set_start_voltage)
-        self.ui.CV_endVoltageValue.valueChanged.connect(self.cyclic_voltammetry.set_end_voltage)
-        self.ui.CV_vertex1Value.valueChanged.connect(self.cyclic_voltammetry.set_vertex_1)
-        self.ui.CV_vertex2Value.valueChanged.connect(self.cyclic_voltammetry.set_vertex_2)
-        self.ui.CV_stepVoltageValue.valueChanged.connect(self.cyclic_voltammetry.set_step_voltage)
-        self.ui.CV_scanRateValue.valueChanged.connect(self.cyclic_voltammetry.set_scan_rate)
-        self.ui.setToZeroValue.stateChanged.connect(self.cyclic_voltammetry.set_set_to_zero)
-
-        # Connect CV settings to delay time calculation
-        self.ui.CV_stepVoltageValue.valueChanged.connect(self.calc_delayTime)
-        self.ui.CV_scanRateValue.valueChanged.connect(self.calc_delayTime)
-        self.calc_delayTime()
-
-        # Initialize CV settings
-        self.cyclic_voltammetry.set_lmp_gain(self.ui.CV_lmpGainValue.currentText())
-        self.cyclic_voltammetry.set_cycles(self.ui.CV_cyclesValue.value())
-        self.cyclic_voltammetry.set_start_voltage(self.ui.CV_startVoltageValue.value())
-        self.cyclic_voltammetry.set_end_voltage(self.ui.CV_endVoltageValue.value())
-        self.cyclic_voltammetry.set_vertex_1(self.ui.CV_vertex1Value.value())
-        self.cyclic_voltammetry.set_vertex_2(self.ui.CV_vertex2Value.value())
-        self.cyclic_voltammetry.set_step_voltage(self.ui.CV_stepVoltageValue.value())
-        self.cyclic_voltammetry.set_scan_rate(self.ui.CV_scanRateValue.value())
-
-    def connect_inicialAmp(self):
-        """
-        Connects initial configuration settings for Amperometry.
-
-        This function connects various UI elements to corresponding setters in the Amperometry object
-        and initializes the initial Amperometry settings based on the values in the UI.
-
-        :return: No return value.
-        """
-        # Connect UI elements to Amperometry setters
-        self.ui.Amp_lmpGainValue.currentTextChanged.connect(self.amperometry.set_lmp_gain)
-        self.ui.Amp_startVoltageValue.valueChanged.connect(self.amperometry.set_pre_stepV)
-        self.ui.Amp_quietTimeValue.valueChanged.connect(self.amperometry.set_quietTime)
-        self.ui.Amp_FirstStepEValue.valueChanged.connect(self.amperometry.set_v1)
-        self.ui.Amp_FirstStepTimeValue.valueChanged.connect(self.amperometry.set_t1)
-        self.ui.Amp_SecondStepEValue.valueChanged.connect(self.amperometry.set_v2)
-        self.ui.Amp_SecondStepTimeValue.valueChanged.connect(self.amperometry.set_t2)
-        self.ui.Amp_SampleValue.valueChanged.connect(self.amperometry.set_samples)
-        self.ui.Amp_LmpRangeValue.currentIndexChanged.connect(self.amperometry.set_ranges)
-        self.ui.setToZeroValue.stateChanged.connect(self.amperometry.set_set_to_zero)
-
-        # Initialize Amperometry settings
-        self.amperometry.set_lmp_gain(self.ui.Amp_lmpGainValue.currentText())
-        self.amperometry.set_pre_stepV(self.ui.Amp_startVoltageValue.value())
-        self.amperometry.set_quietTime(self.ui.Amp_quietTimeValue.value())
-        self.amperometry.set_v1(self.ui.Amp_FirstStepEValue.value())
-        self.amperometry.set_t1(self.ui.Amp_FirstStepTimeValue.value())
-        self.amperometry.set_v2(self.ui.Amp_SecondStepEValue.value())
-        self.amperometry.set_t2(self.ui.Amp_SecondStepTimeValue.value())
-        self.amperometry.set_samples(self.ui.Amp_SampleValue.value())
-        self.amperometry.set_ranges(self.ui.Amp_LmpRangeValue.currentIndex())
 
     def load_ui(self):
         """
@@ -662,14 +644,12 @@ class MainWindow(QMainWindow):
         self.ui = loader.load(ui_file, self)
         ui_file.close()
 
-        self.setup_chart()
-
         self.ui.label_fapesp.setPixmap(QPixmap('./resources/logos/logos-fapesp2.png'))
         self.ui.label_iq.setPixmap(QPixmap('./resources/logos/logo-iqusp2.png'))
         self.ui.label_poli.setPixmap(QPixmap('./resources/logos/poli-usp2.png'))
         self.setWindowIcon(QIcon('./resources/logos/CV_icon.png'))
 
-    def setup_chart(self):
+    def setupChart(self):
         """
         Set up the chart widget with custom styling.
 
@@ -678,7 +658,7 @@ class MainWindow(QMainWindow):
 
         :return: No return value.
         """
-        self.ui.chartWidget.setStyleSheet("background-color: transparent;")
+#        self.ui.chartWidget.setStyleSheet("border-radius: 20px;")
         self.custom_plot = QCustomPlot(self.ui.chartWidget)
         self.custom_plot.setBackground(QColor(51, 56, 70))
         self.custom_plot.xAxis.setLabel("Voltage (mV)")
@@ -693,11 +673,43 @@ class MainWindow(QMainWindow):
         self.custom_plot.yAxis.setTickPen(QPen(QColor(255, 255, 255)))
         self.custom_plot.yAxis.setTickLabelColor(QColor(255, 255, 255))
         self.custom_plot.yAxis.setLabelColor(QColor(255, 255, 255))
-
         self.custom_plot.clearGraphs()
-        self.custom_plot.addGraph()
+
+        self.penCiano = QPen(QColor(0, 255, 255))
+        self.penAmarelo = QPen(QColor(255, 255, 153))
+        self.penVerde = QPen(QColor(144, 238, 144))
+        self.penCurrentChart = self.penCiano
+        self.penCurrentChart.setWidth(4)
+        #deixar amarelo claro
+#        Branco (rgb(255, 255, 255))
+#        Amarelo claro (rgb(255, 255, 153))
+#        Verde claro (rgb(144, 238, 144))
+#        Ciano (rgb(0, 255, 255))
+
+#        self.custom_plot.addGraph()
+        self.criaCurvas()
 
         self.custom_plot.setInteractions(QCP.iRangeDrag | QCP.iRangeZoom | QCP.iSelectPlottables)
+
+        self.custom_plot.mouseDoubleClickEvent = self.handleRescale
+
+    def handleRescale(self, event: QMouseEvent):
+        
+        self.custom_plot.xAxis.rescale()
+        self.custom_plot.yAxis.rescale()
+#        self.custom_plot.replot()
+
+        # Obtém a escala atual dos eixos x e y
+        current_range_x = self.custom_plot.xAxis.range()
+        current_range_y = self.custom_plot.yAxis.range()
+        # Define a nova escala desejada (por exemplo, aumenta em 1.2 vezes)
+        new_scale = 1.2
+
+        # Atualiza a escala dos eixos x e y
+        self.custom_plot.xAxis.setRange(current_range_x)
+        self.custom_plot.yAxis.setRange(current_range_y)
+
+        self.custom_plot.replot()
 
     def resizeEvent(self,event):
         """
@@ -711,6 +723,7 @@ class MainWindow(QMainWindow):
         """
         self.custom_plot.setFixedWidth(self.ui.chartWidget.width())
         self.custom_plot.setFixedHeight(self.ui.chartWidget.height())
+#        self.custom_plot.setGeometry(self.ui.chartWidget.geometry())
         QMainWindow.resizeEvent(self, event)
 
     def create_file(self):
@@ -834,8 +847,6 @@ class MainWindow(QMainWindow):
             }
             """)
 
-
-
     def send_ble_check(self):
         """
         Send a command to the connected serial port to check the status of BLE (Bluetooth Low Energy).
@@ -860,6 +871,126 @@ class MainWindow(QMainWindow):
         """
         self.enable_BLE = state
 
+
+    def get_set_to_zero(self):
+        return self.set_to_zero
+
+    def set_set_to_zero(self, value):
+        print(f"Set set_to_zero to: {value}, {bool(value)}")
+        self.set_to_zero = bool(value)
+
+    def get_holdTime(self):
+        return self.set_holdTime
+
+    @Slot(int)
+    def set_holdTime(self, value):
+        print(f"Set holdTime to: {value}")
+        self.set_holdTime = value
+
+
+    def inicializaSerialControl(self):
+        self.is_serial_port_connected = False
+        self.connected_serial_port = QSerialPort()
+        self.connected_serial_port.setBaudRate(QSerialPort.Baud115200)
+        self.connected_serial_port.setDataBits(QSerialPort.Data8)
+        self.connected_serial_port.setParity(QSerialPort.NoParity)
+        self.connected_serial_port.setStopBits(QSerialPort.OneStop)
+        self.available_serial_ports = []
+
+        # Inicia a verificação das portas seriais disponíveis
+        self.scan_serial_ports()
+        self.serial_port_scan_timer = QTimer()
+        self.serial_port_scan_timer.timeout.connect(self.scan_serial_ports)
+        self.serial_port_scan_timer.start(1000)
+
+        # Conecta o slot para ler dados da porta serial quando dados estão prontos
+        self.connected_serial_port.readyRead.connect(self.read_serial_port_data)
+
+    # Instância métodos para CyclicVoltammetry e Amperometry
+    def inicializaVariaveisMetodos(self):
+        self.cyclic_voltammetry = CyclicVoltammetry()
+        self.connect_inicialCV()
+        self.amperometry = Amperometry()
+        self.connect_inicialAmp()
+
+        self.set_to_zero  =   bool("0")
+        self.ui.setToZeroValue.stateChanged.connect(self.set_set_to_zero)
+        self.ui.holdTimeValue.valueChanged.connect(self.set_holdTime)
+        self.set_holdTime(self.ui.holdTimeValue.value())
+
+        # Controle de estados do método
+        self.currentMedoto = self.ui.toolBox_metodo.currentIndex()
+        self.runnig_metodo = False
+
+    def connect_inicialCV(self):
+        """
+        Connects initial configuration settings for Cyclic Voltammetry (CV).
+
+        This function connects various UI elements to corresponding setters in the CyclicVoltammetry object
+        and initializes the initial CV settings based on the values in the UI.
+
+        :return: No return value.
+        """
+        # Connect UI elements to CV setters
+        self.ui.CV_lmpGainValue.currentTextChanged.connect(self.cyclic_voltammetry.set_lmp_gain)
+        self.ui.CV_cyclesValue.valueChanged.connect(self.cyclic_voltammetry.set_cycles)
+        self.ui.CV_startVoltageValue.valueChanged.connect(self.cyclic_voltammetry.set_start_voltage)
+        self.ui.CV_endVoltageValue.valueChanged.connect(self.cyclic_voltammetry.set_end_voltage)
+        self.ui.CV_vertex1Value.valueChanged.connect(self.cyclic_voltammetry.set_vertex_1)
+        self.ui.CV_vertex2Value.valueChanged.connect(self.cyclic_voltammetry.set_vertex_2)
+        self.ui.CV_stepVoltageValue.valueChanged.connect(self.cyclic_voltammetry.set_step_voltage)
+        self.ui.CV_scanRateValue.valueChanged.connect(self.cyclic_voltammetry.set_scan_rate)
+
+        # Connect CV settings to delay time calculation
+        self.ui.CV_stepVoltageValue.valueChanged.connect(self.calc_delayTime)
+        self.ui.CV_scanRateValue.valueChanged.connect(self.calc_delayTime)
+        self.calc_delayTime()
+
+        # Initialize CV settings
+        self.cyclic_voltammetry.set_lmp_gain(self.ui.CV_lmpGainValue.currentText())
+        self.cyclic_voltammetry.set_cycles(self.ui.CV_cyclesValue.value())
+        self.cyclic_voltammetry.set_start_voltage(self.ui.CV_startVoltageValue.value())
+        self.cyclic_voltammetry.set_end_voltage(self.ui.CV_endVoltageValue.value())
+        self.cyclic_voltammetry.set_vertex_1(self.ui.CV_vertex1Value.value())
+        self.cyclic_voltammetry.set_vertex_2(self.ui.CV_vertex2Value.value())
+        self.cyclic_voltammetry.set_step_voltage(self.ui.CV_stepVoltageValue.value())
+        self.cyclic_voltammetry.set_scan_rate(self.ui.CV_scanRateValue.value())
+
+
+    def connect_inicialAmp(self):
+        """
+        Connects initial configuration settings for Amperometry.
+
+        This function connects various UI elements to corresponding setters in the Amperometry object
+        and initializes the initial Amperometry settings based on the values in the UI.
+
+        :return: No return value.
+        """
+        # Connect UI elements to Amperometry setters
+        self.ui.Amp_lmpGainValue.currentTextChanged.connect(self.amperometry.set_lmp_gain)
+        self.ui.Amp_startVoltageValue.valueChanged.connect(self.amperometry.set_pre_stepV)
+        self.ui.Amp_quietTimeValue.valueChanged.connect(self.amperometry.set_quietTime)
+        self.ui.Amp_FirstStepEValue.valueChanged.connect(self.amperometry.set_v1)
+        self.ui.Amp_FirstStepTimeValue.valueChanged.connect(self.amperometry.set_t1)
+        self.ui.Amp_SecondStepEValue.valueChanged.connect(self.amperometry.set_v2)
+        self.ui.Amp_SecondStepTimeValue.valueChanged.connect(self.amperometry.set_t2)
+        self.ui.Amp_SampleValue.valueChanged.connect(self.amperometry.set_samples)
+        self.ui.Amp_LmpRangeValue.currentIndexChanged.connect(self.amperometry.set_ranges)
+
+        # Initialize Amperometry settings
+        self.amperometry.set_lmp_gain(self.ui.Amp_lmpGainValue.currentText())
+        self.amperometry.set_pre_stepV(self.ui.Amp_startVoltageValue.value())
+        self.amperometry.set_quietTime(self.ui.Amp_quietTimeValue.value())
+        self.amperometry.set_v1(self.ui.Amp_FirstStepEValue.value())
+        self.amperometry.set_t1(self.ui.Amp_FirstStepTimeValue.value())
+        self.amperometry.set_v2(self.ui.Amp_SecondStepEValue.value())
+        self.amperometry.set_t2(self.ui.Amp_SecondStepTimeValue.value())
+        self.amperometry.set_samples(self.ui.Amp_SampleValue.value())
+        self.amperometry.set_ranges(self.ui.Amp_LmpRangeValue.currentIndex())
+
+    def configuraBotaoInicial(self):
+        self.ui.startButton.setEnabled(False)
+        self.ui.stopButton.setEnabled(False)
 if __name__ == "__main__":
     """
     The main entry point for the Potentiostat application.
@@ -883,4 +1014,5 @@ if __name__ == "__main__":
 
     widget.show()
     sys.exit(app.exec_())
+
 
