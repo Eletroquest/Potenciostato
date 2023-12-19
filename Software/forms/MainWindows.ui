@@ -10,6 +10,12 @@
     <height>750</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="minimumSize">
    <size>
     <width>1200</width>
@@ -34,29 +40,74 @@
 	color:white;
 	background-color: rgb(32, 33, 40);
 }
-QToolBox::tab{
-	color:white;
+
+            QMenuBar {
+                background: transparent;
+            }
+
+            QMenuBar::item {
+                color: white;
+                background-color: rgb(36, 39, 50);
+                border-radius: 15px;
+                padding: 5px 10px;
+                margin: 2px;
+            }
+
+            QMenuBar::item:selected {
+                background-color: rgb(128, 165, 205);
+            }
+
+            QMenu {
+                background-color: rgb(36, 39, 50);
+                border-radius: 15px;
+                padding: 5px 10px;
+                margin: 2px;
+            }
+
+            QMenu::item {
+                color: white;
+            }
+
+            QMenu::item:selected {
+                background-color: rgb(128, 165, 205);
+            }
+
+QToolBox::tab {
+    color: white;
     border-radius: 10px;
     padding: 0 8px;
-	background-color: rgb(51, 56, 70);
+    background-color: rgb(51, 56, 70);
 }
+
 QToolBox::tab:selected {
-	font: bold; 	
-	color: rgb(180, 180, 255);
+    font: bold;     
+    color: rgb(32, 33, 40);
+    background-color: rgb(0, 255, 255);
 }
+
 QToolBox::tab:!selected {
-	font: bold; 	
-	color: rgb(176, 176, 176);
+    font: bold;     
+    color: rgb(176, 176, 176);
 }
-#page_CV{
-	color: white;
-	background-color: rgb(51, 56, 70);
-	border: 1px solid rgb(60, 60, 60);
+
+#page_CV QToolBox::tab:selected {
+    background-color: green;
 }
-#page_Amp{
-	color: white;
-	background-color: rgb(51, 56, 70);
-	border: 1px solid rgb(60, 60, 60);
+
+#page_Amp QToolBox::tab:selected {
+    background-color: blue;
+}
+
+#page_CV {
+    color: white;
+    background-color: rgb(51, 56, 70);
+    border: 1px solid rgb(60, 60, 60);
+}
+
+#page_Amp {
+    color: white;
+    background-color: rgb(51, 56, 70);
+    border: 1px solid rgb(60, 60, 60);
 }
 Line {
    background-color: rgb(0, 170, 255);
@@ -82,6 +133,11 @@ QPushButton:disabled{
 	color:white;
 	background-color: rgb(176, 176, 176);
 }
+
+            QPushButton:hover {
+                background-color: rgb(128, 165, 205);
+            }
+
 QLineEdit {
 	color:white;
     border: 2px solid gray;
@@ -124,18 +180,13 @@ QGroupBox
   <layout class="QVBoxLayout" name="verticalLayout_6">
    <item>
     <widget class="QMenuBar" name="menubar">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>1</width>
-       <height>1</height>
-      </size>
-     </property>
+     <widget class="QMenu" name="menuOption">
+      <property name="title">
+       <string>Tools</string>
+      </property>
+      <addaction name="actionImport"/>
+     </widget>
+     <addaction name="menuOption"/>
     </widget>
    </item>
    <item>
@@ -153,64 +204,10 @@ QGroupBox
       <number>8</number>
      </property>
      <item>
-      <widget class="QLabel" name="titleText_2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>260</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Avenir Next LT Pro</family>
-         <pointsize>18</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="midLineWidth">
-        <number>0</number>
-       </property>
-       <property name="text">
-        <string> Software Potentiostat</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="spacing">
         <number>20</number>
        </property>
-       <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item>
         <widget class="QLabel" name="label_poli">
          <property name="sizePolicy">
@@ -294,12 +291,53 @@ QGroupBox
        </item>
       </layout>
      </item>
+     <item>
+      <widget class="QLabel" name="titleText_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>260</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Avenir Next LT Pro</family>
+         <pointsize>18</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+       <property name="text">
+        <string> Software Potentiostat</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="0,1">
+    <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="0,1">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0">
+      <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0,0">
        <item>
         <widget class="QToolBox" name="toolBox_metodo">
          <property name="sizePolicy">
@@ -322,7 +360,7 @@ QGroupBox
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <property name="tabSpacing">
           <number>7</number>
@@ -331,8 +369,8 @@ QGroupBox
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-70</y>
-            <width>324</width>
+            <y>0</y>
+            <width>326</width>
             <height>339</height>
            </rect>
           </property>
@@ -382,7 +420,10 @@ QGroupBox
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="currentText">
-                <string>1</string>
+                <string>4</string>
+               </property>
+               <property name="currentIndex">
+                <number>3</number>
                </property>
                <property name="maxCount">
                 <number>7</number>
@@ -470,13 +511,13 @@ QGroupBox
                 <enum>QAbstractSpinBox::NoButtons</enum>
                </property>
                <property name="minimum">
-                <number>0</number>
+                <number>1</number>
                </property>
                <property name="maximum">
                 <number>50</number>
                </property>
                <property name="value">
-                <number>2</number>
+                <number>1</number>
                </property>
               </widget>
              </item>
@@ -517,7 +558,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -529,10 +570,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>100</number>
@@ -576,7 +617,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -588,10 +629,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>100</number>
@@ -635,7 +676,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -647,10 +688,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>-200</number>
@@ -694,7 +735,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -706,10 +747,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>200</number>
@@ -878,8 +919,8 @@ QGroupBox
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
-            <width>328</width>
+            <y>-139</y>
+            <width>326</width>
             <height>339</height>
            </rect>
           </property>
@@ -1004,7 +1045,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1016,10 +1057,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>174</number>
@@ -1122,7 +1163,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1134,10 +1175,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>-200</number>
@@ -1240,7 +1281,7 @@ QGroupBox
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -650 to 650&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from -1200 to 1200&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1252,10 +1293,10 @@ QGroupBox
                 <string> mV</string>
                </property>
                <property name="minimum">
-                <number>-650</number>
+                <number>-1200</number>
                </property>
                <property name="maximum">
-                <number>650</number>
+                <number>1200</number>
                </property>
                <property name="value">
                 <number>400</number>
@@ -1457,6 +1498,65 @@ QGroupBox
         </widget>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_27">
+         <item>
+          <widget class="QLabel" name="holdTimeLabel">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Hold Time (s)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="holdTimeValue">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Values from 1 to 1000&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> sec</string>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>20</number>
+           </property>
+           <property name="value">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="sizeConstraint">
           <enum>QLayout::SetFixedSize</enum>
@@ -1525,6 +1625,9 @@ QCheckBox:checked {
              <property name="text">
               <string>Set to zero when finished</string>
              </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
@@ -1566,7 +1669,11 @@ QCheckBox:checked {
 QPushButton:disabled{
 	color:white;
 	background-color: rgb(176, 176, 176);
-}</string>
+}
+
+            QPushButton:hover {
+                background-color: rgb(128, 165, 205);
+            }</string>
              </property>
              <property name="text">
               <string>Start</string>
@@ -1598,7 +1705,11 @@ QPushButton:disabled{
 QPushButton:disabled{
 	color:white;
 	background-color: rgb(176, 176, 176);
-}</string>
+}
+
+            QPushButton:hover {
+                background-color: rgb(128, 165, 205);
+            }</string>
              </property>
              <property name="text">
               <string>Stop</string>
@@ -1627,7 +1738,11 @@ QPushButton:disabled{
 QPushButton:disabled{
 	color:white;
 	background-color: rgb(176, 176, 176);
-}</string>
+}
+
+            QPushButton:hover {
+                background-color: rgb(128, 165, 205);
+            }</string>
              </property>
              <property name="text">
               <string>Clear</string>
@@ -1646,7 +1761,7 @@ QPushButton:disabled{
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>345</width>
              <height>90</height>
             </size>
            </property>
@@ -1811,13 +1926,13 @@ QCheckBox:unchecked {
              <widget class="QPushButton" name="connectButton">
               <property name="minimumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>90</width>
+                <width>110</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1923,35 +2038,133 @@ QCheckBox:unchecked {
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,0">
+      <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,0">
+       <property name="spacing">
+        <number>30</number>
+       </property>
+       <property name="leftMargin">
+        <number>30</number>
+       </property>
+       <property name="topMargin">
+        <number>30</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>30</number>
+       </property>
        <item>
-        <widget class="QWidget" name="chartWidget" native="true">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>800</width>
-           <height>600</height>
-          </size>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0">
+         <item>
+          <widget class="QWidget" name="chartWidget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>700</width>
+             <height>500</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QTextEdit" name="textEdit">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>1</width>
-           <height>1</height>
-          </size>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QCheckBox" name="checkBox_AutoScale">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Auto Scaling</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_Rescale">
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>90</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(51, 56, 70);
+}
+
+            QPushButton:hover {
+                background-color: rgb(128, 165, 205);
+            }</string>
+           </property>
+           <property name="text">
+            <string>Rescale</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_PrintGraph">
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>90</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(51, 56, 70);
+}
+
+            QPushButton:hover {
+                background-color: rgb(128, 165, 205);
+            }</string>
+           </property>
+           <property name="text">
+            <string>Print Graph</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -1961,6 +2174,11 @@ QCheckBox:unchecked {
     <widget class="QStatusBar" name="statusbar"/>
    </item>
   </layout>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import File</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
